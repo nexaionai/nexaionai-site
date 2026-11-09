@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NEXAIONai — AI automation for dealerships</title>
+<meta name="description" content="NEXAIONai LLC builds simple AI automation for car dealerships. GrossKeep: track every pickup payment and send reminders.">
+<meta property="og:title" content="NEXAIONai — AI automation for dealerships">
+<meta property="og:description" content="NEXAIONai LLC builds simple AI automation for car dealerships. GrossKeep: track every pickup payment and send reminders.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='34' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&amp;family=Barlow+Condensed:wght@500;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#000}
+a{color:#ffffff}a:hover{color:#bdbdbd}
+.nx{font-family:'Barlow',system-ui,-apple-system,'Segoe UI',sans-serif;color:#fff;background:#000;-webkit-font-smoothing:antialiased}
+.nx h1,.nx h2,.nx h3{font-family:'Barlow Condensed','Barlow',system-ui,sans-serif;text-transform:uppercase;margin:0;font-weight:600;letter-spacing:.01em}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 28px;border:2px solid #fff;color:#fff;text-decoration:none;font-weight:600;letter-spacing:.14em;font-size:13px;text-transform:uppercase;transition:background .3s,color .3s}
+.btn:hover{background:#fff;color:#000}
+.navlink{color:#fff;text-decoration:none;font-weight:600;font-size:13px;letter-spacing:.14em;text-transform:uppercase;min-height:44px;display:inline-flex;align-items:center}
+.navlink:hover{color:#bdbdbd}
+.nm{text-transform:none!important}
+@media (max-width:760px){.nxnav{flex-wrap:nowrap!important;padding-top:16px!important;padding-bottom:16px!important}.nxhide{display:none!important}.nxlogo{font-size:22px!important}}
+
+/* ---------- HERO SCENE ---------- */
+.stars{position:absolute;inset:0;
+background-image:
+radial-gradient(1.2px 1.2px at 23px 41px,rgba(255,255,255,.95) 50%,transparent 51%),
+radial-gradient(1px 1px at 141px 97px,rgba(255,255,255,.7) 50%,transparent 51%),
+radial-gradient(1.5px 1.5px at 263px 211px,rgba(255,255,255,.9) 50%,transparent 51%),
+radial-gradient(1px 1px at 77px 262px,rgba(255,255,255,.55) 50%,transparent 51%),
+radial-gradient(1px 1px at 199px 153px,rgba(255,255,255,.65) 50%,transparent 51%),
+radial-gradient(1.3px 1.3px at 311px 29px,rgba(255,255,255,.8) 50%,transparent 51%);
+background-size:340px 300px}
+.stars.far{opacity:.5;background-size:180px 170px}
+.planet{position:absolute;left:50%;bottom:-2300px;width:2600px;height:2600px;margin-left:-1300px;border-radius:50%;
+background:radial-gradient(circle at 50% 0%,#0d2140 0%,#06101f 18%,#02050b 38%,#000 60%);
+box-shadow:0 -3px 50px 6px rgba(92,160,255,.55),0 -30px 160px 30px rgba(40,100,220,.28),inset 0 18px 60px rgba(140,190,255,.35)}
+.sunglow{position:absolute;bottom:220px;left:20%;width:520px;height:160px;margin-left:-260px;border-radius:50%;
+background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,195,255,.45) 30%,rgba(60,120,230,0) 70%);filter:blur(6px)}
+.sat{position:absolute;top:210px;left:-160px;width:150px;height:2px;background:linear-gradient(90deg,rgba(255,255,255,0),rgba(255,255,255,.85))}
+.sat::after{content:"";position:absolute;right:-2px;top:-2px;width:6px;height:6px;border-radius:50%;background:#fff;box-shadow:0 0 10px 2px rgba(255,255,255,.8)}
+.vignette{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,0) 70%,#000 100%)}
+
+/* ---------- PRODUCT SCENES ---------- */
+.lightsweep{position:absolute;top:-20%;width:60%;height:140%;left:-60%;background:linear-gradient(100deg,rgba(255,255,255,0) 0%,rgba(255,255,255,.06) 50%,rgba(255,255,255,0) 100%);transform:skewX(-12deg)}
+.phone{width:300px;height:610px;border-radius:46px;border:10px solid #1c1c1c;background:#0b0b0b;box-shadow:0 40px 120px rgba(0,0,0,.9),0 0 0 1px #2e2e2e;box-sizing:border-box;padding:56px 18px 24px;display:flex;flex-direction:column;gap:14px;position:relative;overflow:hidden}
+.bubble{max-width:82%;padding:12px 16px;border-radius:20px;font-size:14px;line-height:1.4}
+.in{background:#1f1f1f;color:#f2f2f2;border-bottom-left-radius:6px;align-self:flex-start}
+.out{background:#ffffff;color:#000;border-bottom-right-radius:6px;align-self:flex-end;font-weight:600}
+.paidbtn{align-self:flex-start;min-height:44px;padding:0 22px;border-radius:22px;border:2px solid #fff;background:transparent;color:#fff;font:600 13px 'Barlow',sans-serif;letter-spacing:.14em;text-transform:uppercase}
+.toast{margin-top:auto;border:1px solid #333;border-radius:16px;padding:14px 16px;font-size:13px;color:#d6d6d6;background:#111}
+.dot{width:7px;height:7px;border-radius:50%;background:#bdbdbd;display:inline-block}
+.row{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid #222;font-size:15px}
+.row.ex{color:#8a8a8a;text-decoration:line-through}
+.tag{font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:600;white-space:nowrap}
+.scan{position:absolute;left:0;right:0;height:70px;top:-70px;background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.10),rgba(255,255,255,0));border-bottom:1px solid rgba(255,255,255,.5)}
+.status{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.2em;font-weight:600;text-transform:uppercase;color:#d6d6d6}
+
+/* ---------- MOTION ---------- */
+@keyframes drift{from{background-position:0 0}to{background-position:-340px 300px}}
+@keyframes driftFar{from{background-position:0 0}to{background-position:-180px 170px}}
+@keyframes sun{0%{left:18%;opacity:.75}50%{opacity:1}100%{left:82%;opacity:.75}}
+@keyframes breathe{0%,100%{box-shadow:0 -3px 50px 6px rgba(92,160,255,.5),0 -30px 160px 30px rgba(40,100,220,.24),inset 0 18px 60px rgba(140,190,255,.3)}50%{box-shadow:0 -3px 64px 10px rgba(120,180,255,.7),0 -40px 200px 44px rgba(50,110,230,.34),inset 0 22px 70px rgba(160,205,255,.42)}}
+@keyframes orbit{0%{transform:translate(0,0)}100%{transform:translate(1900px,-60px)}}
+@keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes sweep{0%{left:-60%}100%{left:120%}}
+@keyframes chat{0%,6%{opacity:0;transform:translateY(12px)}12%,88%{opacity:1;transform:none}96%,100%{opacity:0}}
+@keyframes pulse{0%,100%{opacity:.25}50%{opacity:1}}
+@keyframes scanmove{0%{top:-70px}100%{top:100%}}
+@keyframes kb{0%{transform:scale(1)}100%{transform:scale(1.08)}}
+.motion .stars{animation:drift 90s linear infinite}
+.motion .stars.far{animation:driftFar 140s linear infinite}
+.motion .sunglow{animation:sun 40s ease-in-out infinite alternate}
+.motion .planet{animation:breathe 9s ease-in-out infinite}
+.motion .sat{animation:orbit 22s linear infinite}
+.motion .rise{opacity:0;animation:rise 1.2s cubic-bezier(.2,.7,.2,1) forwards}
+.motion .d1{animation-delay:.2s}.motion .d2{animation-delay:.5s}.motion .d3{animation-delay:.8s}
+.motion .lightsweep{animation:sweep 11s ease-in-out infinite}
+.motion .c1,.motion .c2,.motion .c3,.motion .c4{opacity:0;animation:chat 12s ease-in-out infinite}
+.motion .c2{animation-delay:1.6s}.motion .c3{animation-delay:3.2s}.motion .c4{animation-delay:4.8s}
+.motion .dot{animation:pulse 1.2s ease-in-out infinite}
+.motion .dot:nth-child(2){animation-delay:.2s}.motion .dot:nth-child(3){animation-delay:.4s}
+.motion .scan{animation:scanmove 4.5s linear infinite}
+.motion .kb{animation:kb 24s ease-in-out infinite alternate}
+@media (prefers-reduced-motion:reduce){.motion *{animation:none!important;opacity:1!important}}
+</style>
+</head>
+<body>
+<div class="nx motion" style="width: 100%; background: #000000; overflow: hidden">
+
+<!-- ================= NAV ================= -->
+<header style="position: absolute; top: 0; left: 0; right: 0; z-index: 10">
+<nav class="nxnav" style="max-width: 1440px; margin: 0 auto; padding: 22px 5%; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px 32px" aria-label="Main">
+<a href="#top" class="navlink nxlogo" style="font-family: 'Barlow Condensed', sans-serif; font-size: 26px; letter-spacing: .18em; font-weight: 700"><span class="nm">NEXAION<span style="font-weight: 400">ai</span></span></a>
+<div class="nxhide" style="display: flex; flex-wrap: wrap; gap: 8px 32px; align-items: center">
+<a href="#grosskeep" class="navlink">GrossKeep</a>
+<a href="#sharkeep" class="navlink">SharKeep</a>
+<a href="#lynkqo" class="navlink">LYNKqo</a>
+<a href="about.html" class="navlink">Our Story</a>
+</div>
+<div style="display: flex; gap: 20px; align-items: center">
+<div style="display: flex; align-items: center" role="group" aria-label="Video language"><button type="button" class="navlink" id="lang-en" aria-pressed="true" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #ffffff">EN</button><span style="color: #8a8a8a; padding: 0 4px">/</span><button type="button" class="navlink" id="lang-es" aria-pressed="false" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #8a8a8a">ES</button></div>
+<a href="mailto:info@nexaionai.com" class="btn nxhide" style="min-height: 44px; padding: 0 20px">Contact</a>
+</div>
+</nav>
+</header>
+
+<!-- ================= HERO ================= -->
+<section id="top" style="position: relative; min-height: clamp(560px, 64vw, 920px); overflow: hidden; background: #000000">
+<div class="stars far" aria-hidden="true"></div>
+<div class="stars" aria-hidden="true"></div>
+<div class="sat" aria-hidden="true"></div>
+<div class="planet" aria-hidden="true"></div>
+<div class="sunglow" aria-hidden="true"></div>
+<div class="vignette" aria-hidden="true"></div>
+<div style="position: relative; max-width: 1440px; margin: 0 auto; padding: clamp(130px, 18vw, 260px) 5% clamp(120px, 14vw, 200px); box-sizing: border-box; display: flex; flex-direction: column; gap: 28px; align-items: flex-start">
+<h1 class="rise d1" style="font-size: clamp(44px, 7.4vw, 108px); line-height: .95; max-width: 900px">AI automation that keeps your business moving</h1>
+<p class="rise d2" style="margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.5; color: #d6d6d6; max-width: 560px; font-weight: 300">We build simple, powerful products that make dealerships faster and stop money from slipping through the cracks.</p>
+<div class="rise d3" style="display: flex; flex-wrap: wrap; gap: 16px; padding-top: 8px">
+<a href="#grosskeep" class="btn">Explore GrossKeep</a>
+<a href="about.html" class="btn" style="border-color: rgba(255,255,255,.35)">Our story</a>
+</div>
+</div>
+</section>
+
+<section id="grosskeep" style="position: relative; overflow: hidden; background: #050505; border-top: 1px solid #141414">
+<div style="max-width: 1440px; margin: 0 auto; padding: clamp(72px, 9vw, 130px) 5% clamp(64px, 8vw, 120px); box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 20px; max-width: 760px">
+<span class="status"><span style="width: 8px; height: 8px; border-radius: 50%; background: #ffffff; box-shadow: 0 0 12px #ffffff"></span>Live</span>
+<h2 style="font-size: clamp(44px, 6vw, 96px); line-height: .92">GrossKeep</h2>
+<p style="margin: 0; font-size: clamp(22px, 2.3vw, 32px); line-height: 1.25; font-weight: 300">Track every pickup. Protect your gross.</p>
+</div>
+<div style="flex: 1 1 360px; max-width: 460px; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #bdbdbd">GrossKeep helps dealers track pickup-payment commitments and send reminders. Customers get a friendly WhatsApp or text reminder and confirm with one tap. The owner sees everything in one weekly summary.</p>
+
+</div>
+</div>
+<div class="kbwrap" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: #000000; box-shadow: 0 0 0 1px #1f1f1f, 0 50px 140px rgba(0,0,0,.9)">
+<video id="gkvideo" src="media/grosskeep-en.mp4" autoplay="autoplay" muted="muted" playsinline="playsinline" controls="controls" loop="loop" aria-label="GrossKeep video" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: #000000"></video>
+
+</div>
+
+<div style="display: flex; flex-wrap: wrap; gap: 16px 48px; align-items: baseline; justify-content: space-between; padding: 36px 0; border-top: 1px solid #262626; border-bottom: 1px solid #262626">
+<p style="margin: 0; font-family: 'Barlow Condensed', sans-serif; font-size: clamp(32px, 4vw, 56px); font-weight: 600; text-transform: uppercase; line-height: 1">First month free</p>
+<p style="margin: 0; font-size: clamp(20px, 2vw, 26px); font-weight: 300; color: #d6d6d6">Then <strong style="font-weight: 600; color: #ffffff">$149/month</strong></p>
+<a href="mailto:info@nexaionai.com?subject=GrossKeep%20free%20month" class="btn">Start free month · then $149/month</a>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px"><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Automatic reminders</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">WhatsApp and text. One message a week, never spam.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">“I paid” button</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">The customer confirms in one tap.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Partial payments</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Any amount, any time. Your rules.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Weekly owner summary</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Problem cases rise to the top on their own.</p></div></div>
+</div>
+</section>
+
+<section id="sharkeep" style="position: relative; overflow: hidden; background: #000000; border-top: 1px solid #141414">
+<div style="max-width: 1440px; margin: 0 auto; padding: clamp(72px, 9vw, 130px) 5% clamp(64px, 8vw, 120px); box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 20px; max-width: 760px">
+<span class="status"><span style="width: 8px; height: 8px; border-radius: 50%; border: 2px solid #d6d6d6; box-sizing: border-box"></span>Coming soon</span>
+<h2 style="font-size: clamp(44px, 6vw, 96px); line-height: .92">SharKeep</h2>
+<p style="margin: 0; font-size: clamp(22px, 2.3vw, 32px); line-height: 1.25; font-weight: 300">Every message answered. Every lead kept.</p>
+</div>
+<div style="flex: 1 1 360px; max-width: 460px; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #bdbdbd">Your dealership's own AI answers Instagram, Facebook and WhatsApp messages in seconds, day and night. Will be built on Meta's official API.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px"><a href="mailto:info@nexaionai.com?subject=SharKeep%20waitlist" class="btn">Join the waitlist</a><a href="sharkeep.html" class="btn" style="border-color: rgba(255,255,255,.35)">sharkeep.com</a></div>
+</div>
+</div>
+<div class="kbwrap" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: #000000; box-shadow: 0 0 0 1px #1f1f1f, 0 50px 140px rgba(0,0,0,.9)">
+<video src="media/sharkeep.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" aria-label="SharKeep product video: social media messages answered automatically by the dealership AI" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px"><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Your own AI</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Speaks for your dealership, in your name.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">All channels</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Instagram, Facebook and WhatsApp in one place.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">24/7</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Midnight messages get answered too.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Official API</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Will be built the legal way, on Meta's platform.</p></div></div>
+</div>
+</section>
+
+<section id="lynkqo" style="position: relative; overflow: hidden; background: #050505; border-top: 1px solid #141414">
+<div style="max-width: 1440px; margin: 0 auto; padding: clamp(72px, 9vw, 130px) 5% clamp(64px, 8vw, 120px); box-sizing: border-box; display: flex; flex-direction: column; gap: 48px">
+<div style="display: flex; flex-wrap: wrap; gap: 24px 64px; align-items: flex-end; justify-content: space-between">
+<div style="flex: 1 1 520px; display: flex; flex-direction: column; gap: 20px; max-width: 760px">
+<span class="status"><span style="width: 8px; height: 8px; border-radius: 50%; border: 2px solid #d6d6d6; box-sizing: border-box"></span>In development</span>
+<h2 style="font-size: clamp(44px, 6vw, 96px); line-height: .92">LYNKqo</h2>
+<p style="margin: 0; font-size: clamp(22px, 2.3vw, 32px); line-height: 1.25; font-weight: 300">Self-employed income, calculated and explained.</p>
+</div>
+<div style="flex: 1 1 360px; max-width: 460px; display: flex; flex-direction: column; gap: 22px">
+<p style="margin: 0; font-size: 17px; line-height: 1.6; color: #bdbdbd">LYNKqo reads the bank statements, classifies every transaction and breaks income down period by period, so the deal you structure is backed by numbers that hold up and is less likely to come back.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 14px"><a href="mailto:info@nexaionai.com?subject=LYNKqo" class="btn">Get updates</a><a href="lynkqo.html" class="btn" style="border-color: rgba(255,255,255,.35)">lynkqo.com</a></div>
+</div>
+</div>
+<div class="kbwrap" style="position: relative; width: 100%; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: #000000; box-shadow: 0 0 0 1px #1f1f1f, 0 50px 140px rgba(0,0,0,.9)">
+<video src="media/lynkqo.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" aria-label="LYNKqo product video: bank statement transactions classified and income broken down by period" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 32px"><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Every transaction classified</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Income or excluded, with the reason.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Period breakdown</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Each ~30-day period shown side by side.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">One engine, one answer</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">Same statements in, same number out.</p></div><div style="padding-top: 20px; border-top: 1px solid #262626"><h3 style="font-size: 20px">Ready to defend</h3><p style="margin: 8px 0 0; color: #a3a3a3; font-size: 15px; line-height: 1.5">A clear report for the deal jacket.</p></div></div>
+</div>
+</section>
+
+<!-- ================= COMPANY ================= -->
+<section id="company" style="position: relative; overflow: hidden; background: #000000; border-top: 1px solid #141414">
+<div class="stars far" aria-hidden="true" style="opacity: .35"></div>
+<div style="position: relative; max-width: 1000px; margin: 0 auto; padding: clamp(88px, 11vw, 160px) 5%; box-sizing: border-box; display: flex; flex-direction: column; gap: 28px; align-items: center; text-align: center">
+<p style="margin: 0; font-size: 13px; letter-spacing: .3em; font-weight: 600; color: #d6d6d6; text-transform: uppercase">Mission</p>
+<h2 style="font-size: clamp(36px, 5vw, 72px); line-height: 1">Built on the dealership floor</h2>
+<p style="margin: 0; font-size: 19px; line-height: 1.6; color: #bdbdbd; max-width: 680px; font-weight: 300">Every <span class="nm">NEXAIONai</span> product starts with a real problem from a real deal, built by someone who has worked every seat in the dealership.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center"><a href="about.html" class="btn">Read our story</a><a href="mailto:info@nexaionai.com" class="btn" style="border-color: rgba(255,255,255,.35)">Talk to us</a></div>
+</div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer style="border-top: 1px solid #1a1a1a; background: #000000">
+<div style="max-width: 1440px; margin: 0 auto; padding: 40px 5% 0; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; align-items: center; text-align: center; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #d6d6d6">
+<span>Built by <span class="nm">NEXAIONai</span></span><span aria-hidden="true" style="color: #555555">·</span><a href="mailto:info@nexaionai.com" class="navlink" style="font-size: 13px; min-height: 44px"><span class="nm">info@nexaionai.com</span></a>
+</div>
+<div style="max-width: 1440px; margin: 0 auto; padding: 48px 5%; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 20px 48px; justify-content: space-between; align-items: center; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #a3a3a3">
+<span>© 2026 <span class="nm">NEXAIONai</span> LLC</span>
+<div style="display: flex; flex-wrap: wrap; gap: 8px 32px">
+<a href="mailto:info@nexaionai.com" class="navlink" style="font-size: 13px"><span class="nm">info@nexaionai.com</span></a>
+<a href="tel:+17543300001" class="navlink" style="font-size: 13px">(754) 330-0001</a>
+<a href="privacy.html" class="navlink" style="font-size: 13px">Privacy</a>
+<a href="terms.html" class="navlink" style="font-size: 13px">Terms</a>
+</div>
+</div>
+</footer>
+
+</div>
+<script>
+(function(){var v=document.getElementById('gkvideo'),en=document.getElementById('lang-en'),es=document.getElementById('lang-es');
+function set(l){var isEs=l==='es';if(v){var s=isEs?'media/grosskeep-es.mp4':'media/grosskeep-en.mp4';if(v.getAttribute('src')!==s){v.setAttribute('src',s);v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});}v.setAttribute('aria-label',isEs?'Video de GrossKeep en espa\u00f1ol':'GrossKeep video');}
+en.style.color=isEs?'#8a8a8a':'#ffffff';es.style.color=isEs?'#ffffff':'#8a8a8a';en.setAttribute('aria-pressed',String(!isEs));es.setAttribute('aria-pressed',String(isEs));document.documentElement.lang=isEs?'es':'en';}
+if(en&&es){en.addEventListener('click',function(){set('en')});es.addEventListener('click',function(){set('es')});}})();
+</script>
+</body>
+</html>
