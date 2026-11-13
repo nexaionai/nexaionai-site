@@ -101,7 +101,7 @@ background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,1
 <a href="about.html" class="navlink">Our Story</a>
 </div>
 <div style="display: flex; gap: 20px; align-items: center">
-<div style="display: flex; align-items: center" role="group" aria-label="Video language"><button type="button" class="navlink" id="lang-en" aria-pressed="true" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #ffffff">EN</button><span style="color: #8a8a8a; padding: 0 4px">/</span><button type="button" class="navlink" id="lang-es" aria-pressed="false" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #8a8a8a">ES</button></div>
+<div class="nxlang" style="display: flex; align-items: center" role="group" aria-label="Language"><button type="button" class="navlink" id="lang-en" aria-pressed="true" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #ffffff">EN</button><span style="color: #8a8a8a; padding: 0 4px">/</span><button type="button" class="navlink" id="lang-es" aria-pressed="false" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #8a8a8a">ES</button></div>
 <a href="mailto:info@nexaionai.com" class="btn nxhide" style="min-height: 44px; padding: 0 20px">Contact</a>
 </div>
 </nav>
@@ -220,11 +220,6 @@ background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,1
 </footer>
 
 </div>
-<script>
-(function(){var v=document.getElementById('gkvideo'),en=document.getElementById('lang-en'),es=document.getElementById('lang-es');
-function set(l){var isEs=l==='es';if(v){var s=isEs?'media/grosskeep-es.mp4':'media/grosskeep-en.mp4';if(v.getAttribute('src')!==s){v.setAttribute('src',s);v.load();var p=v.play();if(p&&p.catch)p.catch(function(){});}v.setAttribute('aria-label',isEs?'Video de GrossKeep en espa\u00f1ol':'GrossKeep video');}
-en.style.color=isEs?'#8a8a8a':'#ffffff';es.style.color=isEs?'#ffffff':'#8a8a8a';en.setAttribute('aria-pressed',String(!isEs));es.setAttribute('aria-pressed',String(isEs));document.documentElement.lang=isEs?'es':'en';}
-if(en&&es){en.addEventListener('click',function(){set('en')});es.addEventListener('click',function(){set('es')});}})();
-</script>
+<script src="i18n.js"></script>
 </body>
 </html>
