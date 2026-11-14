@@ -59,7 +59,7 @@
 
     /* ---- Home: GrossKeep ---- */
     "Live": "Disponible",
-    "Track every pickup. Protect your gross.": "Controla cada pickup. Cuida tu gross.",
+    "Track every payment since Day 1. Protect your gross.": "Controla cada pago desde el Día 1. Cuida tu gross.",
     "GrossKeep helps dealers track pickup-payment commitments and send reminders. Customers get a friendly WhatsApp or text reminder and confirm with one tap. The owner sees everything in one weekly summary.": "GrossKeep ayuda al dealer a controlar los pickups que el cliente se comprometió a pagar y a enviar recordatorios. El cliente recibe un recordatorio amable por WhatsApp o texto y confirma con un toque. El dueño ve todo en un resumen semanal.",
     "GrossKeep video": "Video de GrossKeep",
     "First month free": "Primer mes gratis",
