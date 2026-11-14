@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GrossKeep para financieras — Demo | NEXAIONai</title>
+<meta name="description" content="GrossKeep para financieras: demo con datos ficticios del seguimiento de pagos a partir del reporte diario de la financiera.">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="GrossKeep para financieras — Demo">
+<meta property="og:description" content="Demo con datos ficticios. Un producto de NEXAIONai LLC.">
+<meta property="og:image" content="https://nexaionai.com/media/og.png">
+<link rel="icon" type="image/svg+xml" href="../media/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="../media/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../media/apple-touch-icon.png">
+<meta name="theme-color" content="#000000">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#000;color:#fff;font-family:-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:15px;line-height:1.45}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+.sitebar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:6px 0 18px;border-bottom:1px solid #1c1c1c;margin-bottom:18px}
+.card b{overflow-wrap:anywhere}
+.sitetag{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#3B9EFF}
+.topbar{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;margin-bottom:18px}
+.banner{border:1px solid #444;padding:8px 12px;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#bbb;flex:1}
+.lang{display:flex;border:1px solid #fff}
+.lang button{background:none;border:none;color:#fff;padding:8px 12px;font-size:12px;cursor:pointer;letter-spacing:.08em}
+.lang button.on{background:#fff;color:#000}
+h1{font-size:24px;font-weight:600;letter-spacing:.02em}
+.sub{color:#999;font-size:13px;margin-top:4px}
+.cfg{display:flex;flex-wrap:wrap;gap:12px;margin:18px 0;align-items:flex-end}
+.cfg label{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#888;display:block;margin-bottom:4px}
+input,select{background:#111;color:#fff;border:1px solid #444;padding:8px 10px;font-size:14px;border-radius:0}
+.tabs{display:flex;border-bottom:1px solid #333;margin-bottom:18px;overflow-x:auto}
+.tab{background:none;border:none;color:#888;padding:12px 14px;font-size:13px;text-transform:uppercase;letter-spacing:.08em;cursor:pointer;white-space:nowrap;border-bottom:2px solid transparent}
+.tab.on{color:#fff;border-bottom-color:#fff}
+.view{display:none}.view.on{display:block}
+.auto{border:1px solid #fff;padding:16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+.auto b{font-size:17px;letter-spacing:.04em}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#fff;margin-right:8px;animation:p 1.6s infinite}
+@keyframes p{50%{opacity:.25}}
+.btn{background:none;color:#fff;border:1px solid #fff;padding:7px 12px;font-size:12px;cursor:pointer;text-transform:uppercase;letter-spacing:.06em}
+.btn.ghost{border-color:#555;color:#aaa}
+.btn.solid{background:#fff;color:#000}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:1px;background:#333;border:1px solid #333;margin:16px 0}
+.kpi{background:#000;padding:14px}
+.kpi b{display:block;font-size:26px;font-weight:500}
+.kpi span{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.06em}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{text-align:left;font-weight:400;color:#777;font-size:11px;text-transform:uppercase;letter-spacing:.06em;padding:8px 6px;border-bottom:1px solid #333}
+td{padding:10px 6px;border-bottom:1px solid #1c1c1c;vertical-align:top}
+.tag{display:inline-block;font-size:11px;padding:2px 6px;border:1px solid #555;color:#ccc;white-space:nowrap}
+.tag.w{border-color:#fff;color:#fff}
+.tag.d{border-color:#333;color:#666}
+.tag.bk{background:#fff;color:#000;border-color:#fff;font-weight:700}
+tr.bkrow td{background:#141414}
+.pend{border:1px dashed #555;padding:12px;font-size:13px;color:#aaa;margin-top:10px}
+.muted{color:#777}
+.sec{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:#888;margin:26px 0 10px}
+.card{border:1px solid #333;padding:14px;margin-top:10px;font-size:14px}
+.ex{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.zero{font-size:40px;font-weight:300}
+.phone{max-width:340px;margin:0 auto;border:1px solid #444;border-radius:28px;padding:18px 14px 22px;min-height:460px}
+.phone .top{text-align:center;font-size:12px;color:#888;margin-bottom:14px}
+.bubble{background:#1d1d1d;padding:10px 12px;border-radius:14px;margin:8px 0;font-size:14px;max-width:88%}
+.bubble.me{background:#fff;color:#000;margin-left:auto}
+.bubble.mail{background:#0b1b2e;border:1px solid #1e3a5c}
+.bubble .mh{font-size:11px;color:#8fb8e6;margin-bottom:6px;border-bottom:1px solid #1e3a5c;padding-bottom:6px}
+.bubble small{display:block;color:#777;font-size:10px;margin-top:4px}
+.pbtns{display:flex;gap:8px;margin-top:16px}
+.pbtns button{flex:1;padding:12px 6px;font-size:13px;cursor:pointer;border:none;font-weight:600}
+.yes{background:#fff;color:#000}.stop{background:#222;color:#fff;border:1px solid #555 !important}
+.rules li{margin:6px 0 6px 18px;color:#ccc}
+.flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:#333;border:1px solid #333}
+.flow div{background:#000;padding:12px;font-size:13px}
+.flow b{display:block;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#888;margin-bottom:4px}
+.foot{margin-top:40px;font-size:11px;color:#666;border-top:1px solid #222;padding-top:12px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="sitebar"><a href="/" aria-label="NEXAIONai"><img src="../media/nexaionai-logo.svg" alt="NEXAIONai" style="height:22px;width:auto;display:block"></a><span class="sitetag" data-i="siteTag"></span></div>
+  <div class="topbar">
+    <div class="banner" data-i="banner"></div>
+    <div class="lang"><button id="l-es" class="on">ES</button><button id="l-en">EN</button></div>
+  </div>
+  <h1>GrossKeep <span class="muted" data-i="h1b"></span></h1>
+  <div class="sub" data-i="forWho" style="color:#d6d6d6;margin-top:8px"></div>
+  <div class="sub" data-i="sub"></div>
+
+  <div class="cfg">
+    <div><label data-i="cfgFin"></label><input id="fin" value="" maxlength="40"></div>
+    <div><label data-i="cfgTel"></label><input id="tel" value="(000) 000-0000" maxlength="20"></div>
+    <div><label data-i="cfgPay"></label><input id="pay" value="" maxlength="60"></div>
+    <div><label data-i="cfgWd"></label><select id="wd"><option value="0" data-i="wd0"></option><option value="7" data-i="wd7"></option><option value="15" selected data-i="wd15"></option></select></div>
+  </div>
+
+  <div class="auto">
+    <div><span class="dot"></span><b data-i="auto"></b><div class="muted" style="font-size:13px;margin-top:4px"><span data-i="today"></span>: <span id="hoyTxt"></span> · <span data-i="runs"></span></div></div>
+    <div><button class="btn solid" id="next" data-i="b1"></button> <button class="btn" id="next7" data-i="b7"></button> <button class="btn ghost" id="reset" data-i="reset"></button><div class="muted" style="font-size:10px;margin-top:4px;text-align:right" data-i="demoOnly"></div></div>
+  </div>
+
+  <div class="tabs">
+    <button class="tab on" data-v="hoy" data-i="t1"></button>
+    <button class="tab" data-v="cel" data-i="t2"></button>
+    <button class="tab" data-v="due" data-i="t3"></button>
+    <button class="tab" data-v="como" data-i="t4"></button>
+    <button class="tab" data-v="log" data-i="t5"></button>
+  </div>
+
+  <section class="view on" id="v-hoy">
+    <div class="sec" data-i="secDid"></div>
+    <div class="kpis" id="today"></div>
+    <div class="sec" data-i="repH"></div>
+    <div class="card" id="repBox"></div>
+    <div id="upRes"></div>
+    <div id="confBox"></div>
+    <div class="sec" data-i="secYou"></div>
+    <div id="exc"></div>
+    <div id="hist"></div>
+    <div class="sec"><span data-i="secPort"></span> · <span id="cnt"></span> <span data-i="secPort2"></span></div>
+    <table><thead><tr><th data-i="thC"></th><th data-i="thQ"></th><th data-i="thN"></th><th data-i="thS"></th></tr></thead><tbody id="tb"></tbody></table>
+  </section>
+
+  <section class="view" id="v-cel">
+    <div class="cfg"><div><label data-i="seePhone"></label><select id="who"></select></div></div>
+    <div class="card muted" style="font-size:12px;margin-bottom:14px" data-i="celNote"></div>
+    <div class="phone"><div class="top" id="ptop"></div><div id="thread"></div><div id="pact"></div></div>
+  </section>
+
+  <section class="view" id="v-due">
+    <div class="sec" data-i="secSince"></div>
+    <div class="kpis" id="kpis"></div>
+    <div class="card muted" data-i="noProm"></div>
+  </section>
+
+  <section class="view" id="v-como">
+    <div class="sec" data-i="secPath"></div>
+    <div class="flow">
+      <div><b data-i="p1h"></b><span data-i="p1"></span></div>
+      <div><b data-i="p2h"></b><span data-i="p2"></span></div>
+      <div><b data-i="p3h"></b><span data-i="p3"></span></div>
+      <div><b data-i="p4h"></b><span data-i="p4"></span></div>
+      <div><b data-i="p5h"></b><span data-i="p5"></span></div>
+    </div>
+    <div class="card muted" style="font-size:13px" data-i="wNote"></div>
+    <div class="sec" data-i="secMorning"></div>
+    <div class="flow">
+      <div><b data-i="m1h"></b><span data-i="m1"></span></div>
+      <div><b data-i="m2h"></b><span data-i="m2"></span></div>
+      <div><b data-i="m3h"></b><span data-i="m3"></span></div>
+      <div><b data-i="m4h"></b><span data-i="m4"></span></div>
+      <div><b data-i="m5h"></b><span data-i="m5"></span></div>
+    </div>
+    <div class="sec" data-i="secData"></div>
+    <div class="card"><span data-i="data1"></span> <span class="muted" data-i="data2"></span></div>
+    <div class="sec" data-i="secPendH"></div>
+    <div class="pend" data-i="pendIns"></div>
+    <div class="sec" data-i="secRules"></div>
+    <ul class="rules"><li data-i="r1"></li><li data-i="r2"></li><li data-i="r3"></li><li data-i="r4"></li><li data-i="r5"></li><li data-i="r6"></li><li data-i="r7"></li><li data-i="r8"></li><li data-i="r9"></li><li data-i="r10"></li><li data-i="r11"></li></ul>
+  </section>
+
+  <section class="view" id="v-log">
+    <div class="sec" data-i="secLog"></div>
+    <table><thead><tr><th data-i="thD"></th><th data-i="thA"></th><th data-i="thE"></th></tr></thead><tbody id="lg"></tbody></table>
+  </section>
+
+  <div class="foot" data-i="foot"></div>
+</div>
+
+<script>
+const T={
+es:{banner:"Demo · datos 100% ficticios · simulación: no se envía ningún mensaje real",h1b:"para financieras",
+ sub:"Automatiza tareas repetitivas del seguimiento y señala lo que necesita atención. El empleado no carga datos a mano: revisa las excepciones. El cliente le paga directo a su financiera; GrossKeep no toca dinero.",
+ cfgFin:"Nombre de la financiera",cfgTel:"Teléfono de la financiera",cfgWd:"Bienvenida al cliente nuevo",wd0:"El mismo día",wd7:"A los 7 días",wd15:"A los 15 días",
+ auto:"TAREAS PROGRAMADAS",today:"Hoy",runs:"corren todos los días a las 9:00 AM según las reglas",b1:"+1 día ▸",b7:"+7 días ▸▸",reset:"Reiniciar",demoOnly:"botones solo del demo",
+ t1:"1 · Empleado",t2:"2 · Celular del cliente",t3:"3 · Dueño",t4:"4 · Cómo funciona",t5:"5 · Bitácora",
+ secDid:"Lo que hizo el sistema solo esta mañana",secYou:"Para usted hoy (solo lo que necesita a una persona)",secPort:"Cartera",secPort2:"cuentas · se actualiza sola · toque un cliente para ver su historia",
+ thC:"Cliente",thQ:"Cuota",thN:"Próximo pago",thS:"Estado",thD:"Fecha",thA:"Cuenta",thE:"Evento",
+ seePhone:"Ver el celular de",celNote:"El cliente recibe los mensajes en su propio idioma (español o inglés), sin importar el idioma de esta pantalla.",
+ secSince:"Desde que arrancó el piloto",noProm:"Son métricas de actividad, no resultados prometidos. El valor real se mide en el piloto, comparando contra el historial de la propia financiera.",
+ secPath:"El camino de cada cliente nuevo",p1h:"Día 0 · Entra solo",p1:"El contrato nuevo llega en el reporte diario de DeskManager. Nadie lo teclea.",
+ p2h:"Día 15 · Bienvenida",p2:"«Bienvenido a la familia»: su primer pago, la fecha y el teléfono para orientarlo en lo que necesite.",
+ p3h:"3 días antes · Recordatorio",p3:"Aviso de su pago, con «Ya pagué».",p4h:"Pago · coincide con el reporte",p4:"Queda pendiente de confirmación. La financiera lo verifica en su sistema con un toque; solo entonces se agradece y se programa el siguiente mes.",
+ p5h:"Si pregunta · Una persona",p5:"Si toca «Pregunta», sube al empleado como prioridad.",
+ wNote:"La bienvenida es solo informativa: no ofrece productos ni promociones (eso exige otro tipo de permiso por ley). Lleva STOP como todos los mensajes.",
+ secMorning:"Cada mañana, sin que nadie toque nada",m1h:"1 · Lee",m1:"El reporte diario de pagos exportado de DeskManager. Nadie teclea pagos uno por uno.",
+ m2h:"2 · Compara",m2:"Marca los pagos que coinciden con el reporte. Quedan pendientes de confirmación de la financiera.",m3h:"3 · Recuerda",m3:"Manda el recordatorio a quien vence en 3 días o quedó pendiente, siguiendo las reglas.",
+ m4h:"4 · Escucha",m4:"Si el cliente toca «Ya pagué», lo compara con el próximo reporte. No agradece ni confirma.",m5h:"5 · Avisa",m5:"Solo sube al empleado lo que no puede resolver una máquina.",
+ secData:"Carga de datos",data1:"Sistema de la financiera: DeskManager (AutoManager). Hoy: una persona exporta 1 reporte al día (CSV o Excel, botón Export) y lo sube o lo reenvía por correo; GrossKeep hace el resto.",
+ data2:"Meta, no hecho: envío automático diario negociado con AutoManager (FTP) o por un proveedor de datos. Hasta tenerlo, no se vende como «cero carga».",
+ secRules:"Reglas que el sistema aplica solo",r1:"Solo escribe a clientes cuyo contrato trae consentimiento para recibir textos.",r2:"La bienvenida se manda una sola vez por contrato y no vende nada.",
+ r3:"Horario permitido: 8:00 AM a 9:00 PM. Sale a las 9:00 AM.",r4:"STOP es para siempre. Se confirma una sola vez.",r5:"Cuenta con abogado: no se contacta al cliente.",
+ r6:"Máximo 1 recordatorio por semana por cuenta.",r7:"«Ya pagué» detiene los recordatorios mientras se verifica.",r8:"Cada mensaje va firmado por la financiera, con su teléfono. Sin amenazas, sin terceros.",r9:"Bancarrota activa o señal creíble de bancarrota: NO CONTACTAR. Ni bienvenida, ni recordatorios, ni avisos de atraso, ni llamadas.",r10:"La bienvenida no lleva el monto del pago (se ve en la pantalla bloqueada del celular). El monto vive solo en este panel.",secPendH:"Pendiente (no está en esta versión)",pendIns:"Aviso de seguro vencido del vehículo: PENDIENTE. Falta confirmar que el sistema de la financiera exporte la fecha de vencimiento de la póliza, y que el Auditor dictamine el texto del aviso (puede tocar reglas de seguro del colateral). Se agrega cuando haya las dos cosas.",confH:"Pagos que coinciden con el reporte · pendientes de confirmación",confQ:"¿Los verificó en su sistema?",confAll:"Sí, confirmados ✓",s_bk:"BANCARROTA · NO CONTACTAR",s_match:"Coincide con el reporte · pendiente de confirmación",e_bk:"Señal de bancarrota del cliente: en HOLD, no contactar. Verificar con el caso.",L_bk:"Señal de bancarrota recibida · HOLD inmediato: no contactar",L_welBK:"Bienvenida no enviada: bancarrota (HOLD)",w_bk:"bancarrota (HOLD)",L_conf:"Financiera confirmó el pago en su sistema · próximo pago {d}",bkHold:"HOLD por bancarrota: el sistema no envía nada a este cliente.",bkSim:"Solo demo: simular que el cliente escribe «me declaré en bancarrota»",k_conf:"Confirmados por la financiera",k_bk:"En HOLD por bancarrota",
+ secLog:"Bitácora (todo queda registrado)",foot:"GrossKeep · un producto de NEXAIONai LLC · Demo con datos ficticios: no se envía ningún mensaje real. Antes de usarse con clientes reales requiere revisión legal y la aprobación de la financiera.",
+ finDef:"Su Financiera",
+ repH:"Reporte diario de DeskManager",repSim:"SIMULADO · formato supuesto (no es el formato real de DeskManager)",repRows:"{p} pagos · {n} contratos nuevos",repSee:"Ver reporte",repHide:"Ocultar",repUp:"Subir reporte de DeskManager (CSV)",repUpHint:"Así lo haría la financiera cada mañana: Export → CSV → subir aquí.",upTitle:"Resultado del archivo «{f}»",upOk:"{n} pagos coinciden con cuentas",upPart:"{n} pagos parciales (van a revisión)",upNF:"{n} cuentas no existen en GrossKeep (van a revisión)",upDup:"{n} ya estaban registradas",upBad:"No pude leer el archivo: necesita columnas de cuenta y monto.",e_part:"Pago parcial: ${x} de ${y}. Revisar.",e_nf:"Cuenta {a} viene en el reporte pero no existe en GrossKeep. Revisar.",L_postF:"Pago en el reporte subido «{f}» · pendiente de confirmación de la financiera",L_part:"Pago PARCIAL en el reporte: ${x} de ${y} · pendiente de revisión",cfgPay:"Canal oficial de pago",payDef:"(canal oficial por confirmar)",colA:"Cuenta",siteTag:"Para financieras · Demo",forWho:"Para financieras que compran contratos a dealers: recordatorios de pago en nombre de la financiera, a partir de su reporte diario.",repEx:"Cargar reporte de ejemplo",repDl:"Descargar ejemplo (CSV)",L_welM:"Bienvenida enviada solo por email (sin permiso de texto)",L_remPM:"Recordatorio por email (pendiente) · sin permiso de texto",L_remSM:"Recordatorio por email (vence pronto) · sin permiso de texto",r11:"Cada recordatorio sale por texto y por email al mismo tiempo: es UN solo toque en dos canales, no mensajes extra. Sin permiso de texto, solo email.",d1H:"Desde el día 1",d1C:"Contrato",d1Fin:"Financiado",d1Term:"meses",d1First:"Primer pago",d1Pays:"Pagos registrados ({n})",d1GK:"Lo que hizo GrossKeep",d1No:"Todavía sin pagos (contrato nuevo).",colV:"Vehículo",colP:"Teléfono",upNew:"{n} contratos nuevos cargados",upStat:"{n} cambios de estado (bancarrota/abogado) aplicados",upNone:"{n} cuentas sin pago hoy",L_newF:"Contrato nuevo cargado desde «{f}» · primer pago {d}",L_statF:"Estado actualizado desde el reporte: {s} · HOLD",colN:"Cliente",colD:"Fecha de pago",colM:"Monto",colT:"Tipo",tPay:"Pago",tNew:"Contrato nuevo",
+ k_new:"Contratos nuevos",k_wel:"Bienvenidas",k_post:"Coinciden con el reporte",k_rem:"Recordatorios",k_ver:"«Ya pagué» que coinciden",k_blk:"Frenados por regla",
+ k_days:"Días de piloto",k_newT:"Contratos nuevos cargados solos",k_welT:"Bienvenidas a la familia",k_q:"Pidieron orientación",k_remT:"Recordatorios enviados",k_pend:"Pendientes hoy",k_case:"Casos para una persona",
+ zero:"cosas para usted hoy. El sistema se encargó.",called:"Llamado ✓",histOf:"Historia de {n} desde que se cargó",close:"Cerrar",noEv:"Sin eventos todavía.",noMsg:"Sin mensajes todavía.",
+ newTag:"nuevo",blocked:"Bloqueado por STOP.",verifying:"Se compara con el próximo reporte de pagos.",
+ s_stop:"STOP",s_abog:"Con abogado",s_q:"Pidió orientación",s_dijo:"Declaró pago · se compara con el reporte",s_paid:"Pagó {d} · confirmado por la financiera ✓",s_late:"Pendiente {n} días",s_soon:"Vence en {n} días",
+ s_newW:"Nuevo · bienvenida enviada",s_newNC:"Nuevo · sin permiso de texto",s_newP:"Nuevo · bienvenida en {n} días",s_ok:"Al día",
+ e_q:"Pidió que lo orienten / lo llamen",e_dijo:"Dijo que pagó hace {n} días y el pago no aparece",e_late:"Pendiente {n} días: los textos ya no bastan",e_nc:"Contrato sin permiso de texto: no se le puede escribir",
+ L_new:"Contrato nuevo cargado solo · primer pago {d}",L_post:"Pago coincide con el reporte diario · pendiente de confirmación de la financiera",L_wel:"Bienvenida a la familia enviada sola",
+ L_welNC:"Bienvenida no enviada: contrato sin consentimiento para textos",L_remP:"Recordatorio enviado solo (pendiente)",L_remS:"Recordatorio enviado solo (vence pronto)",
+ L_blk:"No se envió: {w}",w_stop:"respondió STOP",w_abog:"cuenta con abogado",w_nc:"contrato sin consentimiento para textos",w_dijo:"dijo que pagó, verificando",
+ L_pague:"Cliente tocó YA PAGUÉ · se compara con el próximo reporte (no se agradece todavía)",L_q:"Cliente pidió orientación · subió al empleado como prioridad",L_stop:"Cliente respondió STOP · bloqueado para siempre",L_done:"Empleado marcó: llamado",
+ loc:"es-US"},
+en:{banner:"Demo · 100% fictitious data · simulation: no real messages are sent",h1b:"for finance companies",
+ sub:"Automates repetitive follow-up tasks and flags what needs attention. Staff don't type data in by hand: they review the exceptions. Customers pay their finance company directly; GrossKeep never touches money.",
+ cfgFin:"Finance company name",cfgTel:"Finance company phone",cfgWd:"Welcome for new customers",wd0:"Same day",wd7:"After 7 days",wd15:"After 15 days",
+ auto:"SCHEDULED TASKS",today:"Today",runs:"run every day at 9:00 AM according to the rules",b1:"+1 day ▸",b7:"+7 days ▸▸",reset:"Reset",demoOnly:"demo-only buttons",
+ t1:"1 · Staff",t2:"2 · Customer's phone",t3:"3 · Owner",t4:"4 · How it works",t5:"5 · Activity log",
+ secDid:"What the system did on its own this morning",secYou:"For you today (only what needs a person)",secPort:"Portfolio",secPort2:"accounts · updates itself · tap a customer to see their history",
+ thC:"Customer",thQ:"Payment",thN:"Next due",thS:"Status",thD:"Date",thA:"Account",thE:"Event",
+ seePhone:"View the phone of",celNote:"Customers get messages in their own language (Spanish or English), regardless of this screen's language.",
+ secSince:"Since the pilot started",noProm:"These are activity metrics, not promised results. Real value is measured in the pilot, against the finance company's own history.",
+ secPath:"Every new customer's journey",p1h:"Day 0 · Comes in on its own",p1:"The new contract arrives in the daily DeskManager report. Nobody types it in.",
+ p2h:"Day 15 · Welcome",p2:"\"Welcome to the family\": first payment, due date and the phone number to help with anything they need.",
+ p3h:"3 days before · Reminder",p3:"Payment notice, with \"I paid\".",p4h:"Payment · matches the report",p4:"Stays pending confirmation. The finance company verifies it in its system with one tap; only then is a thank-you sent and next month scheduled.",
+ p5h:"If they ask · A person",p5:"If they tap \"Question\", it goes to staff as a priority.",
+ wNote:"The welcome is informational only: it doesn't offer products or promotions (that requires a different kind of consent by law). It carries STOP like every message.",
+ secMorning:"Every morning, with no one touching anything",m1h:"1 · Reads",m1:"The daily payments report exported from DeskManager. Nobody types payments one by one.",
+ m2h:"2 · Matches",m2:"Flags payments that match the report. They stay pending the finance company's confirmation.",m3h:"3 · Reminds",m3:"Sends a reminder to anyone due in 3 days or past due, following the rules.",
+ m4h:"4 · Listens",m4:"If a customer taps \"I paid\", it compares it with the next report. It does not thank or confirm.",m5h:"5 · Flags",m5:"Only sends staff what a machine can't solve.",
+ secData:"Data loading",data1:"Finance company system: DeskManager (AutoManager). Today: someone exports 1 report a day (CSV or Excel, Export button) and uploads it or forwards it by email; GrossKeep does the rest.",
+ data2:"Goal, not done: an automatic daily feed negotiated with AutoManager (FTP) or through a data provider. Until then, it is not sold as \"zero data entry\".",
+ secRules:"Rules the system applies on its own",r1:"Only texts customers whose contract includes consent to receive texts.",r2:"The welcome is sent once per contract and sells nothing.",
+ r3:"Allowed hours: 8:00 AM to 9:00 PM. Goes out at 9:00 AM.",r4:"STOP is forever. Confirmed only once.",r5:"Account with an attorney: the customer is not contacted.",
+ r6:"Maximum 1 reminder per week per account.",r7:"\"I paid\" pauses reminders while it's checked.",r8:"Every message is signed by the finance company, with its phone number. No threats, no third parties.",r9:"Active bankruptcy or a credible bankruptcy signal: DO NOT CONTACT. No welcome, no reminders, no past-due notices, no calls.",r10:"The welcome does not include the payment amount (it shows on the phone's lock screen). The amount lives only in this panel.",secPendH:"Pending (not in this version)",pendIns:"Vehicle insurance lapse notice: PENDING. We still need to confirm the finance company's system exports the policy expiration date, and the Auditor must rule on the notice text (it may touch collateral insurance rules). It gets added once both are in place.",confH:"Payments matching the report · pending confirmation",confQ:"Did you verify them in your system?",confAll:"Yes, confirmed ✓",s_bk:"BANKRUPTCY · DO NOT CONTACT",s_match:"Matches the report · pending confirmation",e_bk:"Customer bankruptcy signal: on HOLD, do not contact. Verify the case.",L_bk:"Bankruptcy signal received · immediate HOLD: do not contact",L_welBK:"Welcome not sent: bankruptcy (HOLD)",w_bk:"bankruptcy (HOLD)",L_conf:"Finance company confirmed the payment in its system · next payment {d}",bkHold:"Bankruptcy HOLD: the system sends nothing to this customer.",bkSim:"Demo only: simulate the customer texting \"I filed for bankruptcy\"",k_conf:"Confirmed by the finance company",k_bk:"On bankruptcy HOLD",
+ secLog:"Activity log (everything is recorded)",foot:"GrossKeep · a NEXAIONai LLC product · Demo with fictitious data: no real messages are sent. Use with real customers requires legal review and the finance company's approval.",
+ finDef:"Your Finance Co.",
+ repH:"Daily DeskManager report",repSim:"SIMULATED · assumed format (not DeskManager's real format)",repRows:"{p} payments · {n} new contracts",repSee:"View report",repHide:"Hide",repUp:"Upload DeskManager report (CSV)",repUpHint:"This is what the finance company would do each morning: Export → CSV → upload here.",upTitle:"Result of file \"{f}\"",upOk:"{n} payments match accounts",upPart:"{n} partial payments (sent to review)",upNF:"{n} accounts don't exist in GrossKeep (sent to review)",upDup:"{n} were already recorded",upBad:"Couldn't read the file: it needs account and amount columns.",e_part:"Partial payment: ${x} of ${y}. Review.",e_nf:"Account {a} is in the report but doesn't exist in GrossKeep. Review.",L_postF:"Payment in uploaded report \"{f}\" · pending the finance company's confirmation",L_part:"PARTIAL payment in report: ${x} of ${y} · pending review",cfgPay:"Official payment channel",payDef:"(official channel to be confirmed)",colA:"Account",siteTag:"For finance companies · Demo",forWho:"For finance companies that buy contracts from dealers: payment reminders in the finance company's name, from its daily report.",repEx:"Load sample report",repDl:"Download sample (CSV)",L_welM:"Welcome sent by email only (no text consent)",L_remPM:"Email reminder (past due) · no text consent",L_remSM:"Email reminder (due soon) · no text consent",r11:"Each reminder goes out by text and email at the same time: ONE touch on two channels, not extra messages. Without text consent, email only.",d1H:"Since day 1",d1C:"Contract",d1Fin:"Financed",d1Term:"months",d1First:"First payment",d1Pays:"Payments recorded ({n})",d1GK:"What GrossKeep did",d1No:"No payments yet (new contract).",colV:"Vehicle",colP:"Phone",upNew:"{n} new contracts loaded",upStat:"{n} status changes (bankruptcy/attorney) applied",upNone:"{n} accounts with no payment today",L_newF:"New contract loaded from \"{f}\" · first payment {d}",L_statF:"Status updated from the report: {s} · HOLD",colN:"Customer",colD:"Payment date",colM:"Amount",colT:"Type",tPay:"Payment",tNew:"New contract",
+ k_new:"New contracts",k_wel:"Welcomes",k_post:"Match the report",k_rem:"Reminders",k_ver:"\"I paid\" matched",k_blk:"Stopped by a rule",
+ k_days:"Pilot days",k_newT:"New contracts loaded automatically",k_welT:"Welcome messages",k_q:"Asked for help",k_remT:"Reminders sent",k_pend:"Past due today",k_case:"Cases for a person",
+ zero:"things for you today. The system handled it.",called:"Called ✓",histOf:"{n}'s history since loading",close:"Close",noEv:"No events yet.",noMsg:"No messages yet.",
+ newTag:"new",blocked:"Blocked by STOP.",verifying:"Will be compared with the next payments report.",
+ s_stop:"STOP",s_abog:"Attorney",s_q:"Asked for help",s_dijo:"Says paid · compared with report",s_paid:"Paid {d} · confirmed by the finance company ✓",s_late:"{n} days past due",s_soon:"Due in {n} days",
+ s_newW:"New · welcome sent",s_newNC:"New · no text consent",s_newP:"New · welcome in {n} days",s_ok:"Current",
+ e_q:"Asked to be helped / called",e_dijo:"Said they paid {n} days ago and the payment doesn't show",e_late:"{n} days past due: texts aren't enough",e_nc:"Contract has no text consent: can't be texted",
+ L_new:"New contract loaded automatically · first payment {d}",L_post:"Payment matches the daily report · pending the finance company's confirmation",L_wel:"Welcome to the family sent automatically",
+ L_welNC:"Welcome not sent: contract has no text consent",L_remP:"Reminder sent automatically (past due)",L_remS:"Reminder sent automatically (due soon)",
+ L_blk:"Not sent: {w}",w_stop:"replied STOP",w_abog:"account has an attorney",w_nc:"contract has no text consent",w_dijo:"said they paid, checking",
+ L_pague:"Customer tapped I PAID · compared with next report (no thank-you yet)",L_q:"Customer asked for help · sent to staff as priority",L_stop:"Customer replied STOP · blocked permanently",L_done:"Staff marked: called",
+ loc:"en-US"}};
+let UI="es";
+const tr=(k,p)=>{let s=T[UI][k]||k;if(p)for(const x in p)s=s.replace("{"+x+"}",p[x]);return s;};
+function applyStatic(){
+  document.documentElement.lang=UI;
+  document.querySelectorAll("[data-i]").forEach(e=>e.textContent=tr(e.dataset.i));
+  $("l-es").classList.toggle("on",UI==="es");$("l-en").classList.toggle("on",UI==="en");
+  if(!$("fin").value||$("fin").value===T.es.finDef||$("fin").value===T.en.finDef) $("fin").value=tr("finDef");
+}
+
+// nombre, idioma, cuota, vence (nov), consentimiento, stop, abogado, paga N días tras vencer (null = no paga solo), honesto con "Ya pagué"
+const SEED=[
+ ["Ana Rodríguez","es",389,15,1,0,0,0,1],["Carlos Méndez","es",412,14,1,0,0,1,1],["Linda Johnson","en",355,16,1,0,0,null,1],
+ ["José Pérez","es",298,10,1,0,0,5,1],["Mike Thompson","en",445,5,1,0,0,null,1],["Yaneisy Castro","es",367,1,1,0,0,null,1],
+ ["Luis Herrera","es",320,28,1,0,0,-2,1],["Daniela Ruiz","es",401,8,0,0,0,null,1],["Robert Smith","en",510,3,1,0,1,null,1],
+ ["María González","es",276,15,1,1,0,0,1],["Pedro Salazar","es",389,20,1,0,0,0,1],["Kevin Brown","en",333,11,1,0,0,null,0],
+ ["Rosa Medina","es",299,22,1,0,0,-1,1],["Andrés Torres","es",455,16,1,0,0,null,1,1],["Jessica Lee","en",378,9,1,0,0,6,1],
+ ["Fernando Díaz","es",342,25,1,0,0,0,1],["Gloria Vargas","es",310,12,1,0,0,null,1],["Tony Martínez","es",399,30,1,0,0,0,1],
+ ["Sandra Ortiz","es",288,6,1,0,0,9,1],["Brian Wilson","en",420,18,0,0,0,0,1]
+];
+const NEW=[[0,"Yolanda Pérez","es",365,1],[0,"Marcus Green","en",410,1],[4,"Héctor Ramos","es",329,1],[9,"Carmen Soto","es",377,1],[14,"David Clark","en",395,0]];
+let S,HIST=null;
+const EXTRA={"C-1001":{"veh":"2019 Nissan Altima","vin":"DEMOG0D9PCF43ESF4","ph":"(305) 555-0110","em":"ana.rodriguez@example.com","st":"S24100","cd":"07/16/2025","fp":"08/15/2025","pm":389,"fin":13549.31,"apr":23.9,"term":60,"down":1000,"pays":[["08/15/2025",389,"Cash"],["09/15/2025",389,"Debit Card"],["10/15/2025",389,"Cash"],["11/15/2025",389,"Money Order"],["12/15/2025",389,"Cash"],["01/15/2026",389,"Debit Card"],["02/15/2026",389,"Cash"],["03/15/2026",389,"Debit Card"],["04/15/2026",389,"ACH"],["05/15/2026",389,"Money Order"],["06/15/2026",389,"Debit Card"],["07/15/2026",389,"Cash"],["08/15/2026",389,"ACH"],["09/15/2026",389,"Debit Card"],["10/15/2026",389,"Cash"]]},"C-1002":{"veh":"2018 Toyota Camry","vin":"DEMOEDP84X660WSMS","ph":"(305) 555-0111","em":"carlos.mendez@example.com","st":"S24101","cd":"01/15/2026","fp":"02/14/2026","pm":412,"fin":14023.8,"apr":28.9,"term":72,"down":2000,"pays":[["02/14/2026",412,"ACH"],["03/14/2026",412,"Money Order"],["04/14/2026",412,"ACH"],["05/14/2026",412,"Money Order"],["06/14/2026",412,"ACH"],["07/14/2026",412,"Cash"],["08/14/2026",412,"Cash"],["09/14/2026",412,"Money Order"],["10/14/2026",412,"Debit Card"]]},"C-1003":{"veh":"2020 Hyundai Elantra","vin":"DEMOEXYZ86EFU7EDW","ph":"(305) 555-0112","em":"linda.johnson@example.com","st":"S24102","cd":"04/16/2025","fp":"05/16/2025","pm":355,"fin":12365.05,"apr":23.9,"term":60,"down":2500,"pays":[["05/16/2025",355,"ACH"],["06/16/2025",355,"Money Order"],["07/16/2025",355,"ACH"],["08/16/2025",355,"Cash"],["09/16/2025",355,"Money Order"],["10/16/2025",355,"ACH"],["11/16/2025",355,"Debit Card"],["12/16/2025",355,"Cash"],["01/16/2026",355,"Money Order"],["02/16/2026",355,"Cash"],["03/16/2026",355,"Debit Card"],["04/16/2026",355,"ACH"],["05/16/2026",355,"Debit Card"],["06/16/2026",355,"Debit Card"],["07/16/2026",355,"Money Order"],["08/16/2026",355,"Money Order"],["09/16/2026",355,"Money Order"],["10/16/2026",355,"Cash"],["11/13/2026",355,"Money Order"]]},"C-1004":{"veh":"2017 Honda Accord","vin":"DEMOJ4U3Z1RKFMKRR","ph":"(305) 555-0113","em":"jose.perez@example.com","st":"S24103","cd":"07/11/2025","fp":"08/10/2025","pm":298,"fin":9278.2,"apr":26.9,"term":54,"down":3000,"pays":[["08/10/2025",298,"Debit Card"],["09/10/2025",298,"ACH"],["10/10/2025",298,"ACH"],["11/10/2025",298,"Cash"],["12/10/2025",298,"Debit Card"],["01/10/2026",298,"Money Order"],["02/10/2026",298,"ACH"],["03/10/2026",298,"ACH"],["04/10/2026",298,"Debit Card"],["05/10/2026",298,"Cash"],["06/10/2026",298,"Money Order"],["07/10/2026",298,"Money Order"],["08/10/2026",298,"Money Order"],["09/10/2026",298,"Money Order"],["10/10/2026",298,"Money Order"]]},"C-1005":{"veh":"2019 Chevrolet Malibu","vin":"DEMOEP5LHYDGAKG0B","ph":"(305) 555-0114","em":"mike.thompson@example.com","st":"S24104","cd":"07/06/2025","fp":"08/05/2025","pm":445,"fin":13001.96,"apr":26.9,"term":48,"down":1000,"pays":[["08/05/2025",445,"Money Order"],["09/05/2025",445,"Debit Card"],["10/05/2025",445,"ACH"],["11/05/2025",445,"ACH"],["12/05/2025",445,"ACH"],["01/05/2026",445,"Money Order"],["02/05/2026",445,"Cash"],["03/05/2026",445,"Cash"],["04/05/2026",445,"Money Order"],["05/05/2026",445,"Money Order"],["06/05/2026",445,"Money Order"],["07/05/2026",445,"Money Order"],["08/05/2026",445,"ACH"],["09/05/2026",445,"Cash"],["10/05/2026",445,"Debit Card"],["11/13/2026",445,"Debit Card"]]},"C-1006":{"veh":"2018 Ford Escape","vin":"DEMOLBP0KBWFT0LZR","ph":"(305) 555-0115","em":"yaneisy.castro@example.com","st":"S24105","cd":"09/01/2025","fp":"10/01/2025","pm":367,"fin":10209.23,"apr":29.9,"term":48,"down":2000,"pays":[["10/01/2025",367,"Debit Card"],["11/01/2025",367,"Debit Card"],["12/01/2025",367,"Debit Card"],["01/01/2026",367,"Money Order"],["02/01/2026",367,"Debit Card"],["03/01/2026",367,"Debit Card"],["04/01/2026",367,"Money Order"],["05/01/2026",367,"ACH"],["06/01/2026",367,"Cash"],["07/01/2026",367,"Cash"],["08/01/2026",367,"ACH"],["09/01/2026",367,"Money Order"],["10/01/2026",367,"ACH"],["11/13/2026",367,"ACH"]]},"C-1007":{"veh":"2020 Kia Forte","vin":"DEMO0FRGR7NYP7A7Z","ph":"(305) 555-0116","em":"luis.herrera@example.com","st":"S24106","cd":"08/29/2025","fp":"09/28/2025","pm":320,"fin":9442.82,"apr":29.9,"term":54,"down":2500,"pays":[["09/28/2025",320,"Cash"],["10/28/2025",320,"Cash"],["11/28/2025",320,"Money Order"],["12/28/2025",320,"Debit Card"],["01/28/2026",320,"Money Order"],["02/28/2026",320,"Debit Card"],["03/28/2026",320,"Money Order"],["04/28/2026",320,"ACH"],["05/28/2026",320,"Cash"],["06/28/2026",320,"Money Order"],["07/28/2026",320,"Money Order"],["08/28/2026",320,"Money Order"],["09/28/2026",320,"Cash"],["10/28/2026",320,"Debit Card"]]},"C-1008":{"veh":"2016 Toyota Corolla","vin":"DEMO6K7ZKJBAGJ4NP","ph":"(305) 555-0117","em":"daniela.ruiz@example.com","st":"S24107","cd":"07/09/2026","fp":"08/08/2026","pm":401,"fin":13192.69,"apr":23.9,"term":54,"down":1500,"pays":[["08/08/2026",401,"Debit Card"],["09/08/2026",401,"ACH"],["10/08/2026",401,"Debit Card"]]},"C-1009":{"veh":"2021 Nissan Sentra","vin":"DEMOJDZ639JK9B5MA","ph":"(305) 555-0118","em":"robert.smith@example.com","st":"S24108","cd":"11/03/2025","fp":"12/03/2025","pm":510,"fin":18976.15,"apr":24.9,"term":72,"down":3000,"pays":[["12/03/2025",510,"Debit Card"],["01/03/2026",510,"Debit Card"],["02/03/2026",510,"Debit Card"],["03/03/2026",510,"Money Order"],["04/03/2026",510,"Cash"],["05/03/2026",510,"Cash"],["06/03/2026",510,"ACH"],["07/03/2026",510,"Money Order"],["08/03/2026",510,"Cash"],["09/03/2026",510,"Cash"],["10/03/2026",510,"Debit Card"]]},"C-1010":{"veh":"2018 Jeep Compass","vin":"DEMO5BE5X99NU5979","ph":"(305) 555-0119","em":"maria.gonzalez@example.com","st":"S24109","cd":"06/15/2026","fp":"07/15/2026","pm":276,"fin":8913.43,"apr":24.9,"term":54,"down":1000,"pays":[["07/15/2026",276,"ACH"],["08/15/2026",276,"Debit Card"],["09/15/2026",276,"Money Order"],["10/15/2026",276,"Debit Card"]]},"C-1011":{"veh":"2019 Hyundai Sonata","vin":"DEMOES4EPWHK0KTJ6","ph":"(305) 555-0120","em":"pedro.salazar@example.com","st":"S24110","cd":"07/21/2025","fp":"08/20/2025","pm":389,"fin":14854.14,"apr":21.9,"term":66,"down":2500,"pays":[["08/20/2025",389,"Cash"],["09/20/2025",389,"Money Order"],["10/20/2025",389,"Money Order"],["11/20/2025",389,"Debit Card"],["12/20/2025",389,"Debit Card"],["01/20/2026",389,"Debit Card"],["02/20/2026",389,"Money Order"],["03/20/2026",389,"Money Order"],["04/20/2026",389,"ACH"],["05/20/2026",389,"Money Order"],["06/20/2026",389,"Debit Card"],["07/20/2026",389,"ACH"],["08/20/2026",389,"ACH"],["09/20/2026",389,"Cash"],["10/20/2026",389,"ACH"]]},"C-1012":{"veh":"2017 Chevrolet Equinox","vin":"DEMO1YV9EHRGFTUCM","ph":"(305) 555-0121","em":"kevin.brown@example.com","st":"S24111","cd":"05/12/2025","fp":"06/11/2025","pm":333,"fin":10060.0,"apr":24.9,"term":48,"down":2500,"pays":[["06/11/2025",333,"Debit Card"],["07/11/2025",333,"Money Order"],["08/11/2025",333,"ACH"],["09/11/2025",333,"Money Order"],["10/11/2025",333,"Debit Card"],["11/11/2025",333,"Money Order"],["12/11/2025",333,"ACH"],["01/11/2026",333,"Cash"],["02/11/2026",333,"ACH"],["03/11/2026",333,"Cash"],["04/11/2026",333,"Debit Card"],["05/11/2026",333,"Money Order"],["06/11/2026",333,"Cash"],["07/11/2026",333,"ACH"],["08/11/2026",333,"Cash"],["09/11/2026",333,"Cash"],["10/11/2026",333,"ACH"]]},"C-1013":{"veh":"2020 Nissan Rogue","vin":"DEMOH6AY3UJCSHLTD","ph":"(305) 555-0122","em":"rosa.medina@example.com","st":"S24112","cd":"12/23/2025","fp":"01/22/2026","pm":299,"fin":8453.72,"apr":28.9,"term":48,"down":1000,"pays":[["01/22/2026",299,"ACH"],["02/22/2026",299,"ACH"],["03/22/2026",299,"Debit Card"],["04/22/2026",299,"ACH"],["05/22/2026",299,"Money Order"],["06/22/2026",299,"Debit Card"],["07/22/2026",299,"ACH"],["08/22/2026",299,"ACH"],["09/22/2026",299,"Cash"],["10/22/2026",299,"ACH"]]},"C-1014":{"veh":"2019 Honda Civic","vin":"DEMON97S5G4829WPR","ph":"(305) 555-0123","em":"andres.torres@example.com","st":"S24113","cd":"07/17/2026","fp":"08/16/2026","pm":455,"fin":14466.57,"apr":21.9,"term":48,"down":3000,"pays":[["08/16/2026",455,"Money Order"],["09/16/2026",455,"ACH"],["10/16/2026",455,"Cash"],["11/13/2026",455,"Debit Card"]]},"C-1015":{"veh":"2018 Kia Sorento","vin":"DEMOLDF19VSVC6MLU","ph":"(305) 555-0124","em":"jessica.lee@example.com","st":"S24114","cd":"05/10/2026","fp":"06/09/2026","pm":378,"fin":12912.41,"apr":21.9,"term":54,"down":2000,"pays":[["06/09/2026",378,"ACH"],["07/09/2026",378,"ACH"],["08/09/2026",378,"ACH"],["09/09/2026",378,"ACH"],["10/09/2026",378,"Debit Card"]]},"C-1016":{"veh":"2017 Ford Fusion","vin":"DEMOAY1F7U9NS9AFT","ph":"(305) 555-0125","em":"fernando.diaz@example.com","st":"S24115","cd":"01/26/2026","fp":"02/25/2026","pm":342,"fin":10331.9,"apr":24.9,"term":48,"down":2000,"pays":[["02/25/2026",342,"Debit Card"],["03/25/2026",342,"Money Order"],["04/25/2026",342,"Cash"],["05/25/2026",342,"Money Order"],["06/25/2026",342,"Cash"],["07/25/2026",342,"ACH"],["08/25/2026",342,"ACH"],["09/25/2026",342,"Debit Card"],["10/25/2026",342,"Cash"]]},"C-1017":{"veh":"2019 Toyota RAV4","vin":"DEMOX8KVKC949J9BR","ph":"(305) 555-0126","em":"gloria.vargas@example.com","st":"S24116","cd":"03/13/2026","fp":"04/12/2026","pm":310,"fin":10551.89,"apr":28.9,"term":72,"down":3000,"pays":[["04/12/2026",310,"Debit Card"],["05/12/2026",310,"ACH"],["06/12/2026",310,"Cash"],["07/12/2026",310,"Money Order"],["08/12/2026",310,"Money Order"],["09/12/2026",310,"Cash"],["10/12/2026",310,"Cash"],["11/13/2026",150,"Cash"]]},"C-1018":{"veh":"2016 Dodge Charger","vin":"DEMOA6E9FE7TETSPR","ph":"(305) 555-0127","em":"tony.martinez@example.com","st":"S24117","cd":"12/31/2025","fp":"01/30/2026","pm":399,"fin":13291.26,"apr":29.9,"term":72,"down":2500,"pays":[["01/30/2026",399,"Money Order"],["02/28/2026",399,"Money Order"],["03/30/2026",399,"Money Order"],["04/30/2026",399,"Cash"],["05/30/2026",399,"Money Order"],["06/30/2026",399,"ACH"],["07/30/2026",399,"Cash"],["08/30/2026",399,"Debit Card"],["09/30/2026",399,"Cash"],["10/30/2026",399,"Debit Card"]]},"C-1019":{"veh":"2020 Mitsubishi Outlander","vin":"DEMOJA7D8UGP8VV66","ph":"(305) 555-0128","em":"sandra.ortiz@example.com","st":"S24118","cd":"10/07/2025","fp":"11/06/2025","pm":288,"fin":9831.79,"apr":24.9,"term":60,"down":3000,"pays":[["11/06/2025",288,"Cash"],["12/06/2025",288,"Debit Card"],["01/06/2026",288,"ACH"],["02/06/2026",288,"Cash"],["03/06/2026",288,"Money Order"],["04/06/2026",288,"Cash"],["05/06/2026",288,"ACH"],["06/06/2026",288,"Money Order"],["07/06/2026",288,"Cash"],["08/06/2026",288,"Money Order"],["09/06/2026",288,"ACH"],["10/06/2026",288,"Money Order"]]},"C-1020":{"veh":"2018 GMC Terrain","vin":"DEMOKT0J9UH0R882B","ph":"(305) 555-0129","em":"brian.wilson@example.com","st":"S24119","cd":"05/19/2026","fp":"06/18/2026","pm":420,"fin":13817.78,"apr":23.9,"term":54,"down":3000,"pays":[["06/18/2026",420,"Money Order"],["07/18/2026",420,"Money Order"],["08/18/2026",420,"Money Order"],["09/18/2026",420,"ACH"],["10/18/2026",420,"Debit Card"]]},"N-3001":{"veh":"2019 Nissan Altima","vin":"DEMOHYAXY2HNAVT0E","ph":"(305) 555-0130","em":"ricardo.fuentes@example.com","st":"S24120","cd":"11/13/2026","fp":"12/13/2026","pm":349,"fin":12482.89,"apr":24.9,"term":66,"down":2500,"pays":[]},"N-3002":{"veh":"2018 Toyota Camry","vin":"DEMOUDUGDVKSU49XN","ph":"(305) 555-0131","em":"ashley.moore@example.com","st":"S24121","cd":"11/13/2026","fp":"12/13/2026","pm":365,"fin":14561.09,"apr":21.9,"term":72,"down":2000,"pays":[]},"N-2001":{"veh":"2019 Toyota Corolla","ph":"(305) 555-0140","em":"yolanda.perez@example.com"},"N-2002":{"veh":"2020 Honda Accord","ph":"(305) 555-0141","em":"marcus.green@example.com"},"N-2003":{"veh":"2018 Nissan Rogue","ph":"(305) 555-0142","em":"hector.ramos@example.com"},"N-2004":{"veh":"2021 Kia Forte","ph":"(305) 555-0143","em":"carmen.soto@example.com"},"N-2005":{"veh":"2019 Ford Escape","ph":"(305) 555-0144","em":"david.clark@example.com"}}; // ficticio: tel 555-01xx, @example.com, VIN DEMO…
+function $(id){return document.getElementById(id);}
+const fin=()=>$("fin").value.trim()||tr("finDef");
+const tel=()=>$("tel").value.trim();
+const WD=()=>+$("wd").value;
+const today=()=>new Date(2026,10,13+S.dia);
+const fmt=(d,l)=>d.toLocaleDateString(l||T[UI].loc,{day:"numeric",month:"short"});
+const diff=(a,b)=>Math.round((a-b)/864e5);
+const late=a=>diff(today(),a.due);
+const first=a=>a.n.split(" ")[0];
+function mk(id,n,lang,cuota,due,consent,stop,abog,payOff,honest,isNew,bk){
+  return {id,n,lang,cuota,due,consent,stop,abog,payOff,honest,isNew,bk:!!bk,bkSignal:null,match:null,loaded:new Date(today()),welcomed:false,dijo:null,lastSent:null,msgs:[],paidLast:null,cyc:0,callMe:null,handled:null};
+}
+function init(){
+  S={dia:0,log:[],tot:{conf:0,sent:0,posted:0,auto:0,blocked:0,stops:0,nuevos:0,welcome:0,preg:0},day:null,accts:[]};HIST=null;
+  S.accts=SEED.map((r,i)=>mk("C-"+(1001+i),r[0],r[1],r[2],new Date(2026,10,r[3]),!!r[4],!!r[5],!!r[6],r[7],!!r[8],false,r[9]));
+  runDay();
+}
+// la bitácora guarda clave + datos, así se traduce al cambiar idioma
+function log(a,k,p){S.log.unshift({d:new Date(today()),id:a?a.id:null,a:a?a.id+" · "+a.n:"—",k,p:p||{}});}
+function logText(l){const p={};for(const x in l.p){const v=l.p[x];p[x]=v instanceof Date?fmt(v):(x==="w"?tr(v):v);}return tr(l.k,p);}
+const em=a=>(EXTRA[a.id]||{}).em||"";
+function say(a,t,subj){ // subj => también va por email (mismo toque, no es un mensaje extra)
+  const d=new Date(today());
+  if(a.consent) a.msgs.push({t,from:"fin",d,h:"9:00 AM"});
+  if(subj&&em(a)) a.msgs.push({t,from:"fin",d,h:"9:00 AM",mail:subj});
+}
+const subj=(a,k)=>a.lang==="en"?({w:"Welcome to "+fin(),r:"Payment reminder · "+fin(),p:"Payment pending · "+fin()})[k]:({w:"Bienvenido a "+fin(),r:"Recordatorio de pago · "+fin(),p:"Pago pendiente · "+fin()})[k];
+const pay=(l)=>$("pay").value.trim()||T[l==="en"?"en":"es"].payDef;
+// Textos dictaminados por el Auditor (14-nov-2026, «DICTAMEN ENTREGA GEMINI»). Uso: solo demo con datos ficticios.
+function msg(a){
+  const F=fin(),f=first(a),L=late(a)>0,dd=fmt(a.due,a.lang==="en"?"en-US":"es-US");
+  if(a.lang==="en") return L?`Hi ${f}, this is ${F}. Our records still show the payment due on ${dd} as pending. If you've already paid, please let us know so we can review it. If you need assistance, you can reply here. Reply STOP to opt out.`
+    :`Hi ${f}, this is ${F}. Your next payment is due on ${dd}. You can pay directly through our official payment channels: ${pay("en")}. Questions or need assistance? We're here to help. Reply STOP to opt out.`;
+  return L?`Hola ${f}, te saluda ${F}. Según nuestros registros, el pago con vencimiento ${dd} todavía aparece pendiente. Si ya pagaste, avísanos para revisarlo. Si necesitas orientación, puedes responder aquí. Responde STOP para no recibir más mensajes.`
+    :`Hola ${f}, te saluda ${F}. Te recordamos que tu próximo pago vence el ${dd}. Puedes pagar directamente por nuestros canales oficiales: ${pay("es")}. ¿Tienes alguna pregunta o necesitas ayuda? Estamos para orientarte. Responde STOP para no recibir más mensajes.`;
+}
+function welcome(a){
+  const F=fin(),Tl=tel(),f=first(a);
+  return a.lang==="en"
+   ?`Hi ${f}, this is ${F}. Welcome to our family. We're here to help with any questions about your account. You can reply to this message or call us at ${Tl}. Reply STOP to opt out.`
+   :`Hola ${f}, te saludamos de ${F}. Bienvenido a nuestra familia. Estamos aquí para orientarte con cualquier pregunta sobre tu cuenta. Puedes responder a este mensaje o llamarnos al ${Tl}. Responde STOP para no recibir más mensajes.`;
+}
+function post(a,file,amt){ // coincide con el reporte: NO confirma, NO agradece
+  a.match=new Date(today());const wasDijo=a.dijo!==null;
+  S.day.posted++;S.tot.posted++;if(wasDijo){S.day.auto++;S.tot.auto++;}
+  const m=amt==null?a.cuota:amt;
+  if(m<a.cuota-0.5){a.partial=m;log(a,"L_part",{x:m.toFixed(2),y:a.cuota});}
+  else if(file) log(a,"L_postF",{f:file}); else log(a,"L_post");
+  if(!file&&S.report) S.report.rows.push({t:"P",a:a.id,n:a.n,d:new Date(today()),m});
+}
+function confirmAll(){ // la financiera verificó en su sistema: recién aquí se agradece y se programa el siguiente mes
+  S.accts.filter(a=>a.match!==null&&a.partial==null).forEach(a=>{ // los parciales NO se confirman en bloque: van a revisión
+    const wasDijo=a.dijo!==null;a.paidLast=new Date(a.match);a.match=null;
+    const old=a.due;a.due=new Date(old.getFullYear(),old.getMonth()+1,old.getDate());
+    a.cyc++;a.lastSent=null;a.dijo=null;S.tot.conf++;log(a,"L_conf",{d:new Date(a.due)});
+    if(wasDijo&&!a.bk&&!a.stop) say(a,a.lang==="en"?`Your payment has been confirmed. Thank you for your payment!`:`Tu pago quedó confirmado. ¡Gracias por tu pago!`);
+    a.partial=null;
+  });
+  renderAll();
+}
+function bkSignal(id){const a=S.accts.find(x=>x.id===id);const en=a.lang==="en";
+  a.msgs.push({t:en?"I filed for bankruptcy":"Me declaré en bancarrota",from:"me",d:new Date(today()),h:""});
+  a.bk=true;a.bkSignal=new Date(today());log(a,"L_bk");renderAll();}
+function runDay(){
+  S.day={posted:0,sent:0,auto:0,blocked:0,nuevos:0,welcome:0};
+  const t=today();
+  S.report={file:"DeskManager_Pagos_SIMULADO_"+t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0")+".csv",rows:[]};
+  NEW.filter(r=>r[0]===S.dia).forEach(r=>{
+    const a=mk("N-"+(2001+S.tot.nuevos),r[1],r[2],r[3],new Date(t.getFullYear(),t.getMonth(),t.getDate()+30),!!r[4],false,false,0,true,true);
+    S.accts.unshift(a);S.day.nuevos++;S.tot.nuevos++;S.report.rows.push({t:"N",a:a.id,n:a.n,d:new Date(a.due),m:a.cuota});log(a,"L_new",{d:new Date(a.due)});
+  });
+  S.accts.forEach(a=>{
+    const dijoOk=a.dijo!==null&&a.honest&&diff(t,a.dijo)>=1;
+    const paysNow=a.payOff!==null&&diff(t,a.due)>=(a.cyc===0?a.payOff:0);
+    if(a.match===null&&(paysNow||dijoOk)) post(a);
+  });
+  S.accts.filter(a=>a.isNew&&!a.welcomed&&diff(t,a.loaded)>=WD()).forEach(a=>{
+    a.welcomed=true;if(a.stop) return;
+    if(a.bk){log(a,"L_welBK");S.day.blocked++;S.tot.blocked++;return;}
+    if(!a.consent&&!em(a)){log(a,"L_welNC");S.day.blocked++;S.tot.blocked++;return;}
+    say(a,welcome(a),subj(a,"w"));S.day.welcome++;S.tot.welcome++;log(a,a.consent?"L_wel":"L_welM");
+  });
+  S.accts.forEach(a=>{
+    const L=late(a);if(!(L>=-3)) return;
+    if(a.match!==null) return;
+    let why=null;
+    if(a.bk) why="w_bk";else if(a.stop) why="w_stop";else if(a.abog) why="w_abog";else if(!a.consent&&!em(a)) why="w_nc";else if(a.dijo!==null) why="w_dijo";
+    else if(a.lastSent!==null&&diff(t,a.lastSent)<7) return;
+    if(why){if(a.lastSent===null){log(a,"L_blk",{w:why});S.day.blocked++;S.tot.blocked++;a.lastSent=new Date(t);}return;}
+    say(a,msg(a),subj(a,L>0?"p":"r"));a.lastSent=new Date(t);S.day.sent++;S.tot.sent++;log(a,(L>0?"L_remP":"L_remS")+(a.consent?"":"M"));
+  });
+  renderAll();
+}
+function exceptions(){
+  const t=today(),out=[];
+  S.accts.forEach(a=>{
+    if(a.bk){if(a.bkSignal!==null) out.push([a,tr("e_bk")]);return;} // bancarrota: nunca "llamar"
+    if(a.partial!=null&&a.match!==null) out.push([a,tr("e_part",{x:a.partial.toFixed(2),y:a.cuota})]);
+    else if(a.callMe!==null) out.push([a,tr("e_q")]);
+    else if(a.match===null&&a.dijo!==null&&diff(t,a.dijo)>=3) out.push([a,tr("e_dijo",{n:diff(t,a.dijo)})]);
+    else if(a.match===null&&!a.stop&&!a.abog&&late(a)>=10&&a.dijo===null) out.push([a,tr("e_late",{n:late(a)})]);
+    else if(!a.consent&&!em(a)&&late(a)>=0) out.push([a,tr("e_nc")]);
+  });
+  (S.notFound||[]).forEach(r=>out.push([{id:"X-"+r.a,n:r.a,cuota:r.m,handled:null},tr("e_nf",{a:r.a})]));
+  return out;
+}
+function reply(id,kind){
+  const a=S.accts.find(x=>x.id===id),en=a.lang==="en",now={d:new Date(today()),h:""};
+  const me=t=>a.msgs.push(Object.assign({t,from:"me"},now)),them=t=>a.msgs.push(Object.assign({t,from:"fin"},now));
+  if(kind==="p"){me(en?"I PAID":"YA PAGUÉ");them(en?`We received your payment notice, ${first(a)}. We've shared it with ${fin()} so they can review the status in their records. You don't need to submit the notice again right now.`:`Recibimos tu aviso de pago, ${first(a)}. Lo compartimos con ${fin()} para revisar el estado en sus registros. Por ahora, no necesitas volver a enviarnos el aviso.`);a.dijo=new Date(today());log(a,"L_pague");}
+  else if(kind==="q"){me(en?"I have a question":"Tengo una pregunta");them(en?`${fin()}: With pleasure. Someone from our team will call you.`:`${fin()}: Con gusto. Alguien de nuestro equipo le va a llamar.`);a.callMe=new Date(today());S.tot.preg++;log(a,"L_q");}
+  else{me("STOP");them(en?`Confirmed. You will no longer receive automated messages from ${fin()} at this number.`:`Confirmado. No recibirás más mensajes automáticos de ${fin()} en este número.`);a.stop=true;S.tot.stops++;log(a,"L_stop");}
+  renderAll();
+}
+function done(id){if(id.startsWith("X-")){S.notFound=(S.notFound||[]).filter(r=>"X-"+r.a!==id);renderAll();return;}const a=S.accts.find(x=>x.id===id);if(a.partial!=null){a.partial=null;a.match=null;} // parcial revisado: la cuenta vuelve a su ciclo normal
+  a.handled=diff(today(),new Date(2026,10,13));a.callMe=null;log(a,"L_done");renderAll();}
+function showHist(id){HIST=HIST===id?null:id;renderHoy();const h=$("hist");if(HIST&&h.scrollIntoView)h.scrollIntoView({behavior:"smooth",block:"start"});}
+function status(a){
+  if(a.bk) return[tr("s_bk"),"bk"];
+  if(a.match!==null) return[tr("s_match"),""];
+  if(a.stop) return[tr("s_stop"),"d"];if(a.abog) return[tr("s_abog"),"d"];
+  if(a.callMe!==null) return[tr("s_q"),"w"];
+  if(a.dijo!==null) return[tr("s_dijo"),""];
+  const L=late(a);
+  if(a.paidLast&&L<-3) return[tr("s_paid",{d:fmt(a.paidLast)}),""];
+  if(L>0) return[tr("s_late",{n:L}),"w"];
+  if(L>=-3) return[tr("s_soon",{n:-L}),""];
+  if(a.isNew&&a.cyc===0) return[a.welcomed?(a.consent?tr("s_newW"):tr("s_newNC")):tr("s_newP",{n:WD()-diff(today(),a.loaded)}),""];
+  return[tr("s_ok"),""];
+}
+const kpi=arr=>arr.map(([v,k])=>`<div class="kpi"><b>${v}</b><span>${tr(k)}</span></div>`).join("");
+let REPOPEN=false;
+function renderRep(){
+  const r=S.report||{rows:[],file:""},P=r.rows.filter(x=>x.t==="P").length,N=r.rows.filter(x=>x.t==="N").length;
+  let h=`<div class="ex"><span><b>${r.file}</b><br><span class="muted">${tr("repRows",{p:P,n:N})} · ${tr("repSim")}</span></span><span><button class="btn ghost" onclick="REPOPEN=!REPOPEN;renderRep()">${tr(REPOPEN?"repHide":"repSee")}</button></span></div>`;
+  if(REPOPEN) h+=`<table style="margin-top:10px"><thead><tr><th>${tr("colT")}</th><th>${tr("colA")}</th><th>${tr("colN")}</th><th>${tr("colV")}</th><th>${tr("colP")}</th><th>Email</th><th>${tr("colD")}</th><th>${tr("colM")}</th></tr></thead><tbody>${r.rows.map(x=>`<tr><td>${tr(x.t==="P"?"tPay":"tNew")}</td><td>${x.a}</td><td>${x.n}</td><td>${(EXTRA[x.a]||{}).veh||"—"}</td><td>${(EXTRA[x.a]||{}).ph||"—"}</td><td>${(EXTRA[x.a]||{}).em||"—"}</td><td>${fmt(x.d)}</td><td>$${(+x.m).toFixed(2)}</td></tr>`).join("")||`<tr><td colspan="8" class="muted">—</td></tr>`}</tbody></table>`;
+  h+=`<div style="margin-top:12px;border-top:1px solid #222;padding-top:12px;display:flex;flex-wrap:wrap;gap:10px;align-items:center"><label class="btn" style="display:inline-block;cursor:pointer">${tr("repUp")}<input type="file" accept=".csv,text/csv" style="display:none" onchange="upload(this)"></label> <button class="btn solid" onclick="loadSample()">${tr("repEx")}</button> <a class="btn ghost" href="reporte-ejemplo-deskmanager.csv" download style="text-decoration:none">${tr("repDl")}</a><div class="muted" style="font-size:12px;margin-top:6px">${tr("repUpHint")}</div></div>`;
+  $("repBox").innerHTML=h;
+}
+function parseCSV(txt){
+  const rows=[];let row=[],cur="",q=false;
+  for(let i=0;i<txt.length;i++){const c=txt[i];
+    if(q){if(c==='"'){if(txt[i+1]==='"'){cur+='"';i++;}else q=false;}else cur+=c;}
+    else if(c==='"')q=true;else if(c===","){row.push(cur);cur="";}else if(c==="\n"||c==="\r"){if(c==="\r"&&txt[i+1]==="\n")i++;row.push(cur);rows.push(row);row=[];cur="";}else cur+=c;}
+  if(cur!==""||row.length){row.push(cur);rows.push(row);}
+  return rows.filter(r=>r.some(x=>x.trim()!==""));
+}
+function upload(inp){
+  const f0=inp.files&&inp.files[0];if(!f0)return;
+  const rd=new FileReader();
+  rd.onload=()=>importCSV(f0.name,String(rd.result),inp);
+  rd.readAsText(f0);
+}
+function loadSample(){
+  fetch("reporte-ejemplo-deskmanager.csv").then(r=>r.text()).then(txt=>importCSV("DeskManager_BHPH_Cuentas_y_Pagos_SIMULADO_2026-11-13.csv",txt,null)).catch(()=>{$("upRes").innerHTML=`<div class="card">${tr("upBad")}</div>`;});
+}
+function importCSV(fname,text,inp){
+  const f={name:fname};
+  {
+    const rows=parseCSV(text);const H=(rows.shift()||[]).map(h=>h.trim().toLowerCase());
+    const col=al=>{for(const a of al){const i=H.indexOf(a);if(i>=0)return i;}return -1;};
+    const C={acct:col(["account #","account","account number","acct","acct #","acct no","cuenta","no. cuenta"]),
+      amt:col(["pmt received amount","amount received","payment received","pmt amount","amount paid","amount","monto pagado","monto"]),
+      first:col(["customer first","first name","first"]),last:col(["customer last","last name","last"]),name:col(["customer","customer name","cliente","name"]),
+      lang:col(["language","idioma"]),phone:col(["phone","phone #","cell","telefono","teléfono"]),email:col(["email","e-mail","correo"]),
+      cons:col(["text consent","sms consent","consent","consentimiento"]),status:col(["status","account status","estado"]),
+      sched:col(["scheduled payment","payment","regular payment","cuota"]),next:col(["next due date","next due","first payment date","due date"]),
+      cdate:col(["contract date","sale date","fecha de contrato"]),yr:col(["year"]),mk:col(["make"]),md:col(["model"]),vin:col(["vin"])};
+    if(C.acct<0||(C.amt<0&&C.sched<0)){$("upRes").innerHTML=`<div class="card">${tr("upBad")}</div>`;if(inp)inp.value="";return;}
+    const g=(r,i)=>i>=0?String(r[i]||"").trim():"";const num=s=>parseFloat(String(s).replace(/[$,\s]/g,""));
+    const pd=s=>{const m=String(s).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);return m?new Date(+m[3],+m[1]-1,+m[2]):null;};
+    let res={ok:0,part:0,nf:0,dup:0,nw:0,st:0,none:0};S.notFound=S.notFound||[];
+    rows.forEach(r=>{
+      const id=g(r,C.acct);if(!id)return;
+      const m=num(g(r,C.amt)),paid=!isNaN(m)&&m>0,stat=g(r,C.status).toLowerCase();
+      let a=S.accts.find(x=>x.id.toLowerCase()===id.toLowerCase());
+      if(!a){
+        const due=pd(g(r,C.next)),sched=num(g(r,C.sched));
+        if(!paid&&due&&!isNaN(sched)&&(stat==="new"||g(r,C.cdate))){ // contrato nuevo: entra solo
+          const nm=(g(r,C.name)||(g(r,C.first)+" "+g(r,C.last))).trim()||id;
+          const lang=/^(en|english|ingl)/i.test(g(r,C.lang))?"en":"es";
+          const cons=/^(y|yes|s|si|sí|true|1)$/i.test(g(r,C.cons));
+          a=mk(id,nm,lang,sched,due,cons,false,false,0,true,true);S.accts.unshift(a);
+          EXTRA[id]=Object.assign({veh:[g(r,C.yr),g(r,C.mk),g(r,C.md)].filter(Boolean).join(" ")||"—",ph:g(r,C.phone)||"—",em:g(r,C.email),vin:g(r,C.vin),cd:g(r,C.cdate),fp:g(r,C.next),pays:[]},EXTRA[id]&&EXTRA[id].cd?{fin:EXTRA[id].fin,apr:EXTRA[id].apr,term:EXTRA[id].term,down:EXTRA[id].down}:{});
+          S.tot.nuevos++;S.day.nuevos++;res.nw++;log(a,"L_newF",{f:f.name,d:new Date(due)});
+        } else if(paid){S.notFound.push({a:id,m});res.nf++;}
+        return;
+      }
+      if(/bankrupt|quiebra|bancarrota/.test(stat)&&!a.bk){a.bk=true;res.st++;log(a,"L_statF",{s:g(r,C.status)});}
+      else if(/attorney|abogado/.test(stat)&&!a.abog){a.abog=true;res.st++;log(a,"L_statF",{s:g(r,C.status)});}
+      if(!paid){res.none++;return;}
+      if(a.match!==null){res.dup++;return;}
+      post(a,f.name,m);if(m<a.cuota-0.5)res.part++;else res.ok++;
+    });
+    $("upRes").innerHTML=`<div class="card"><b>${tr("upTitle",{f:f.name})}</b><br>${tr("upOk",{n:res.ok})} · ${tr("upPart",{n:res.part})} · ${tr("upNew",{n:res.nw})} · ${tr("upStat",{n:res.st})} · ${tr("upNF",{n:res.nf})} · ${tr("upDup",{n:res.dup})} · ${tr("upNone",{n:res.none})}</div>`;
+    if(inp)inp.value="";renderAll();
+  }
+}
+function renderHoy(){
+  renderRep();
+  $("hoyTxt").textContent=today().toLocaleDateString(T[UI].loc,{weekday:"long",day:"numeric",month:"long"});
+  $("today").innerHTML=kpi([[S.day.nuevos,"k_new"],[S.day.welcome,"k_wel"],[S.day.posted,"k_post"],[S.day.sent,"k_rem"],[S.day.auto,"k_ver"],[S.day.blocked,"k_blk"]]);
+  const dnow=diff(today(),new Date(2026,10,13));
+  const m=S.accts.filter(a=>a.match!==null&&a.partial==null);
+  $("confBox").innerHTML=m.length?`<div class="sec">${tr("confH")}</div><div class="card ex"><span><b>${m.length}</b> · ${m.map(a=>a.n+" $"+a.cuota).join(" · ")}<br><span class="muted">${tr("confQ")}</span></span><button class="btn solid" onclick="confirmAll()">${tr("confAll")}</button></div>`:"";
+  const ex=exceptions().filter(([a])=>a.handled===null||dnow-a.handled>=7); // llamado: no vuelve a salir por 7 días
+  $("exc").innerHTML=ex.length?ex.map(([a,w])=>`<div class="card ex"><span><b>${a.n}</b> · $${a.cuota}<br><span class="muted">${w}</span></span><button class="btn" onclick="done('${a.id}')">${tr("called")}</button></div>`).join("")
+    :`<div class="card"><span class="zero">0</span> <span class="muted">${tr("zero")}</span></div>`;
+  const h=HIST&&S.accts.find(x=>x.id===HIST);
+  const X=h&&EXTRA[h.id];
+  const d1=X&&X.cd?`<div class="sec">${tr("d1H")} · ${h.n} · ${X.veh}</div><div class="card"><div style="margin-bottom:8px">${tr("d1C")}: <b>${X.cd}</b> · ${tr("d1Fin")} $${(+X.fin).toLocaleString("en-US",{minimumFractionDigits:2})} · ${X.apr}% APR · ${X.term} ${tr("d1Term")} · Down $${X.down} · ${tr("d1First")}: <b>${X.fp}</b></div><div class="muted" style="font-size:12px;margin-bottom:6px">${tr("d1Pays",{n:(X.pays||[]).length})}</div>${(X.pays||[]).length?`<table><thead><tr><th>#</th><th>${tr("colD")}</th><th>${tr("colM")}</th><th>${tr("colT")}</th></tr></thead><tbody>${X.pays.map((q,i)=>`<tr><td>${i+1}</td><td>${q[0]}</td><td>$${(+q[1]).toFixed(2)}</td><td>${q[2]}</td></tr>`).join("")}</tbody></table>`:`<span class="muted">${tr("d1No")}</span>`}</div>`:"";
+  $("hist").innerHTML=h?d1+`<div class="sec">${tr("d1GK")} · ${tr("histOf",{n:h.n})}</div><div class="card"><table><tbody>${S.log.filter(l=>l.id===h.id).slice().reverse().map(l=>`<tr><td class="muted" style="width:70px">${fmt(l.d)}</td><td>${logText(l)}</td></tr>`).join("")||`<tr><td class="muted">${tr("noEv")}</td></tr>`}</tbody></table><div style="margin-top:10px"><button class="btn ghost" onclick="showHist('${h.id}')">${tr("close")}</button></div></div>`:"";
+  $("cnt").textContent=S.accts.length;
+  $("tb").innerHTML=S.accts.map(a=>{const[s,c]=status(a);return`<tr class="${a.bk?"bkrow":""}" style="cursor:pointer" onclick="showHist('${a.id}')"><td>${a.n}${a.isNew?` <span class="tag">${tr("newTag")}</span>`:''}<br><span class="muted">${a.id}${EXTRA[a.id]?' · '+EXTRA[a.id].veh+' · '+EXTRA[a.id].ph+(EXTRA[a.id].em?' · '+EXTRA[a.id].em:''):''}</span></td><td>$${a.cuota}</td><td>${fmt(a.due)}</td><td><span class="tag ${c}">${s}</span></td></tr>`}).join("");
+}
+function renderCel(){
+  const sel=$("who"),cur=sel.value,w=S.accts.filter(a=>a.msgs.length);
+  sel.innerHTML=w.map(a=>`<option value="${a.id}">${a.n} (${a.lang.toUpperCase()})</option>`).join("");
+  if(cur&&w.some(a=>a.id===cur)) sel.value=cur;
+  const a=S.accts.find(x=>x.id===sel.value);
+  if(!a){$("thread").innerHTML=`<p class="muted" style="text-align:center;margin-top:120px">${tr("noMsg")}</p>`;$("pact").innerHTML="";$("ptop").textContent="";return;}
+  $("ptop").textContent=fin()+" · "+tel();
+  $("thread").innerHTML=a.msgs.map(m=>m.mail?`<div class="bubble mail"><div class="mh">✉ Email · ${em(a)}<br><b>${m.mail}</b></div>${m.t}<small>${fmt(m.d)} ${m.h}</small></div>`:`<div class="bubble ${m.from==="me"?"me":""}">${m.t}<small>${fmt(m.d)} ${m.h}</small></div>`).join("");
+  const en=a.lang==="en";
+  if(a.bk){$("pact").innerHTML=`<p style="text-align:center;margin-top:14px"><span class="tag bk">${tr("s_bk")}</span><br><span class="muted" style="font-size:12px">${tr("bkHold")}</span></p>`;return;}
+  if(a.stop){$("pact").innerHTML=`<p class="muted" style="text-align:center;margin-top:14px">${tr("blocked")}</p>`;return;}
+  const canPay=a.dijo===null&&late(a)>=-3;
+  $("pact").innerHTML=`<div class="pbtns">${canPay?`<button class="yes" onclick="reply('${a.id}','p')">${en?"I PAID":"YA PAGUÉ"}</button>`:""}<button class="stop" onclick="reply('${a.id}','q')">${en?"QUESTION":"PREGUNTA"}</button><button class="stop" onclick="reply('${a.id}','s')">STOP</button></div>`
+    +(a.dijo!==null?`<p class="muted" style="text-align:center;margin-top:10px;font-size:12px">${tr("verifying")}</p>`:"")
+    +`<p style="text-align:center;margin-top:14px"><a href="#" style="color:#777;font-size:11px" onclick="event.preventDefault();bkSignal('${a.id}')">${tr("bkSim")}</a></p>`;
+}
+function renderDue(){
+  const pend=S.accts.filter(a=>late(a)>0).length;
+  const dn=diff(today(),new Date(2026,10,13));$("kpis").innerHTML=kpi([[S.dia+1,"k_days"],[S.tot.nuevos,"k_newT"],[S.tot.welcome,"k_welT"],[S.tot.preg,"k_q"],[S.tot.posted,"k_post"],[S.tot.conf,"k_conf"],[S.accts.filter(a=>a.bk).length,"k_bk"],[S.tot.sent,"k_remT"],[S.tot.auto,"k_ver"],[pend,"k_pend"],[exceptions().filter(([a])=>a.handled===null||dn-a.handled>=7).length,"k_case"],[S.tot.stops,"s_stop"]]);
+}
+function renderLog(){$("lg").innerHTML=S.log.map(l=>`<tr><td class="muted">${fmt(l.d)}</td><td>${l.a}</td><td>${logText(l)}</td></tr>`).join("");}
+function renderAll(){renderHoy();renderCel();renderDue();renderLog();}
+function setLang(l){UI=l;try{localStorage.setItem("gk-lang",l)}catch(e){}applyStatic();renderAll();}
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{
+  document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===b));
+  document.querySelectorAll(".view").forEach(v=>v.classList.toggle("on",v.id==="v-"+b.dataset.v));renderAll();});
+$("l-es").onclick=()=>setLang("es");$("l-en").onclick=()=>setLang("en");
+$("next").onclick=()=>{S.dia++;runDay();};
+$("next7").onclick=()=>{for(let i=0;i<7;i++){S.dia++;runDay();}};
+$("reset").onclick=()=>{S.notFound=[];$("upRes").innerHTML="";init();};$("pay").oninput=renderAll;$("who").onchange=renderCel;$("fin").oninput=renderAll;$("tel").oninput=renderAll;$("wd").onchange=renderAll;
+try{const s=localStorage.getItem("gk-lang");if(s==="en"||s==="es")UI=s;}catch(e){}
+applyStatic();init();
+</script>
+</body>
+</html>

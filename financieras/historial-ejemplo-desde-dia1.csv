@@ -1,0 +1,216 @@
+Account #,Customer,Payment Date,Amount,Pmt Method,Payment #
+C-1001,Ana Rodríguez,08/15/2025,389.00,Cash,1
+C-1001,Ana Rodríguez,09/15/2025,389.00,Debit Card,2
+C-1001,Ana Rodríguez,10/15/2025,389.00,Cash,3
+C-1001,Ana Rodríguez,11/15/2025,389.00,Money Order,4
+C-1001,Ana Rodríguez,12/15/2025,389.00,Cash,5
+C-1001,Ana Rodríguez,01/15/2026,389.00,Debit Card,6
+C-1001,Ana Rodríguez,02/15/2026,389.00,Cash,7
+C-1001,Ana Rodríguez,03/15/2026,389.00,Debit Card,8
+C-1001,Ana Rodríguez,04/15/2026,389.00,ACH,9
+C-1001,Ana Rodríguez,05/15/2026,389.00,Money Order,10
+C-1001,Ana Rodríguez,06/15/2026,389.00,Debit Card,11
+C-1001,Ana Rodríguez,07/15/2026,389.00,Cash,12
+C-1001,Ana Rodríguez,08/15/2026,389.00,ACH,13
+C-1001,Ana Rodríguez,09/15/2026,389.00,Debit Card,14
+C-1001,Ana Rodríguez,10/15/2026,389.00,Cash,15
+C-1002,Carlos Méndez,02/14/2026,412.00,ACH,1
+C-1002,Carlos Méndez,03/14/2026,412.00,Money Order,2
+C-1002,Carlos Méndez,04/14/2026,412.00,ACH,3
+C-1002,Carlos Méndez,05/14/2026,412.00,Money Order,4
+C-1002,Carlos Méndez,06/14/2026,412.00,ACH,5
+C-1002,Carlos Méndez,07/14/2026,412.00,Cash,6
+C-1002,Carlos Méndez,08/14/2026,412.00,Cash,7
+C-1002,Carlos Méndez,09/14/2026,412.00,Money Order,8
+C-1002,Carlos Méndez,10/14/2026,412.00,Debit Card,9
+C-1003,Linda Johnson,05/16/2025,355.00,ACH,1
+C-1003,Linda Johnson,06/16/2025,355.00,Money Order,2
+C-1003,Linda Johnson,07/16/2025,355.00,ACH,3
+C-1003,Linda Johnson,08/16/2025,355.00,Cash,4
+C-1003,Linda Johnson,09/16/2025,355.00,Money Order,5
+C-1003,Linda Johnson,10/16/2025,355.00,ACH,6
+C-1003,Linda Johnson,11/16/2025,355.00,Debit Card,7
+C-1003,Linda Johnson,12/16/2025,355.00,Cash,8
+C-1003,Linda Johnson,01/16/2026,355.00,Money Order,9
+C-1003,Linda Johnson,02/16/2026,355.00,Cash,10
+C-1003,Linda Johnson,03/16/2026,355.00,Debit Card,11
+C-1003,Linda Johnson,04/16/2026,355.00,ACH,12
+C-1003,Linda Johnson,05/16/2026,355.00,Debit Card,13
+C-1003,Linda Johnson,06/16/2026,355.00,Debit Card,14
+C-1003,Linda Johnson,07/16/2026,355.00,Money Order,15
+C-1003,Linda Johnson,08/16/2026,355.00,Money Order,16
+C-1003,Linda Johnson,09/16/2026,355.00,Money Order,17
+C-1003,Linda Johnson,10/16/2026,355.00,Cash,18
+C-1003,Linda Johnson,11/13/2026,355.00,Money Order,19
+C-1004,José Pérez,08/10/2025,298.00,Debit Card,1
+C-1004,José Pérez,09/10/2025,298.00,ACH,2
+C-1004,José Pérez,10/10/2025,298.00,ACH,3
+C-1004,José Pérez,11/10/2025,298.00,Cash,4
+C-1004,José Pérez,12/10/2025,298.00,Debit Card,5
+C-1004,José Pérez,01/10/2026,298.00,Money Order,6
+C-1004,José Pérez,02/10/2026,298.00,ACH,7
+C-1004,José Pérez,03/10/2026,298.00,ACH,8
+C-1004,José Pérez,04/10/2026,298.00,Debit Card,9
+C-1004,José Pérez,05/10/2026,298.00,Cash,10
+C-1004,José Pérez,06/10/2026,298.00,Money Order,11
+C-1004,José Pérez,07/10/2026,298.00,Money Order,12
+C-1004,José Pérez,08/10/2026,298.00,Money Order,13
+C-1004,José Pérez,09/10/2026,298.00,Money Order,14
+C-1004,José Pérez,10/10/2026,298.00,Money Order,15
+C-1005,Mike Thompson,08/05/2025,445.00,Money Order,1
+C-1005,Mike Thompson,09/05/2025,445.00,Debit Card,2
+C-1005,Mike Thompson,10/05/2025,445.00,ACH,3
+C-1005,Mike Thompson,11/05/2025,445.00,ACH,4
+C-1005,Mike Thompson,12/05/2025,445.00,ACH,5
+C-1005,Mike Thompson,01/05/2026,445.00,Money Order,6
+C-1005,Mike Thompson,02/05/2026,445.00,Cash,7
+C-1005,Mike Thompson,03/05/2026,445.00,Cash,8
+C-1005,Mike Thompson,04/05/2026,445.00,Money Order,9
+C-1005,Mike Thompson,05/05/2026,445.00,Money Order,10
+C-1005,Mike Thompson,06/05/2026,445.00,Money Order,11
+C-1005,Mike Thompson,07/05/2026,445.00,Money Order,12
+C-1005,Mike Thompson,08/05/2026,445.00,ACH,13
+C-1005,Mike Thompson,09/05/2026,445.00,Cash,14
+C-1005,Mike Thompson,10/05/2026,445.00,Debit Card,15
+C-1005,Mike Thompson,11/13/2026,445.00,Debit Card,16
+C-1006,Yaneisy Castro,10/01/2025,367.00,Debit Card,1
+C-1006,Yaneisy Castro,11/01/2025,367.00,Debit Card,2
+C-1006,Yaneisy Castro,12/01/2025,367.00,Debit Card,3
+C-1006,Yaneisy Castro,01/01/2026,367.00,Money Order,4
+C-1006,Yaneisy Castro,02/01/2026,367.00,Debit Card,5
+C-1006,Yaneisy Castro,03/01/2026,367.00,Debit Card,6
+C-1006,Yaneisy Castro,04/01/2026,367.00,Money Order,7
+C-1006,Yaneisy Castro,05/01/2026,367.00,ACH,8
+C-1006,Yaneisy Castro,06/01/2026,367.00,Cash,9
+C-1006,Yaneisy Castro,07/01/2026,367.00,Cash,10
+C-1006,Yaneisy Castro,08/01/2026,367.00,ACH,11
+C-1006,Yaneisy Castro,09/01/2026,367.00,Money Order,12
+C-1006,Yaneisy Castro,10/01/2026,367.00,ACH,13
+C-1006,Yaneisy Castro,11/13/2026,367.00,ACH,14
+C-1007,Luis Herrera,09/28/2025,320.00,Cash,1
+C-1007,Luis Herrera,10/28/2025,320.00,Cash,2
+C-1007,Luis Herrera,11/28/2025,320.00,Money Order,3
+C-1007,Luis Herrera,12/28/2025,320.00,Debit Card,4
+C-1007,Luis Herrera,01/28/2026,320.00,Money Order,5
+C-1007,Luis Herrera,02/28/2026,320.00,Debit Card,6
+C-1007,Luis Herrera,03/28/2026,320.00,Money Order,7
+C-1007,Luis Herrera,04/28/2026,320.00,ACH,8
+C-1007,Luis Herrera,05/28/2026,320.00,Cash,9
+C-1007,Luis Herrera,06/28/2026,320.00,Money Order,10
+C-1007,Luis Herrera,07/28/2026,320.00,Money Order,11
+C-1007,Luis Herrera,08/28/2026,320.00,Money Order,12
+C-1007,Luis Herrera,09/28/2026,320.00,Cash,13
+C-1007,Luis Herrera,10/28/2026,320.00,Debit Card,14
+C-1008,Daniela Ruiz,08/08/2026,401.00,Debit Card,1
+C-1008,Daniela Ruiz,09/08/2026,401.00,ACH,2
+C-1008,Daniela Ruiz,10/08/2026,401.00,Debit Card,3
+C-1009,Robert Smith,12/03/2025,510.00,Debit Card,1
+C-1009,Robert Smith,01/03/2026,510.00,Debit Card,2
+C-1009,Robert Smith,02/03/2026,510.00,Debit Card,3
+C-1009,Robert Smith,03/03/2026,510.00,Money Order,4
+C-1009,Robert Smith,04/03/2026,510.00,Cash,5
+C-1009,Robert Smith,05/03/2026,510.00,Cash,6
+C-1009,Robert Smith,06/03/2026,510.00,ACH,7
+C-1009,Robert Smith,07/03/2026,510.00,Money Order,8
+C-1009,Robert Smith,08/03/2026,510.00,Cash,9
+C-1009,Robert Smith,09/03/2026,510.00,Cash,10
+C-1009,Robert Smith,10/03/2026,510.00,Debit Card,11
+C-1010,María González,07/15/2026,276.00,ACH,1
+C-1010,María González,08/15/2026,276.00,Debit Card,2
+C-1010,María González,09/15/2026,276.00,Money Order,3
+C-1010,María González,10/15/2026,276.00,Debit Card,4
+C-1011,Pedro Salazar,08/20/2025,389.00,Cash,1
+C-1011,Pedro Salazar,09/20/2025,389.00,Money Order,2
+C-1011,Pedro Salazar,10/20/2025,389.00,Money Order,3
+C-1011,Pedro Salazar,11/20/2025,389.00,Debit Card,4
+C-1011,Pedro Salazar,12/20/2025,389.00,Debit Card,5
+C-1011,Pedro Salazar,01/20/2026,389.00,Debit Card,6
+C-1011,Pedro Salazar,02/20/2026,389.00,Money Order,7
+C-1011,Pedro Salazar,03/20/2026,389.00,Money Order,8
+C-1011,Pedro Salazar,04/20/2026,389.00,ACH,9
+C-1011,Pedro Salazar,05/20/2026,389.00,Money Order,10
+C-1011,Pedro Salazar,06/20/2026,389.00,Debit Card,11
+C-1011,Pedro Salazar,07/20/2026,389.00,ACH,12
+C-1011,Pedro Salazar,08/20/2026,389.00,ACH,13
+C-1011,Pedro Salazar,09/20/2026,389.00,Cash,14
+C-1011,Pedro Salazar,10/20/2026,389.00,ACH,15
+C-1012,Kevin Brown,06/11/2025,333.00,Debit Card,1
+C-1012,Kevin Brown,07/11/2025,333.00,Money Order,2
+C-1012,Kevin Brown,08/11/2025,333.00,ACH,3
+C-1012,Kevin Brown,09/11/2025,333.00,Money Order,4
+C-1012,Kevin Brown,10/11/2025,333.00,Debit Card,5
+C-1012,Kevin Brown,11/11/2025,333.00,Money Order,6
+C-1012,Kevin Brown,12/11/2025,333.00,ACH,7
+C-1012,Kevin Brown,01/11/2026,333.00,Cash,8
+C-1012,Kevin Brown,02/11/2026,333.00,ACH,9
+C-1012,Kevin Brown,03/11/2026,333.00,Cash,10
+C-1012,Kevin Brown,04/11/2026,333.00,Debit Card,11
+C-1012,Kevin Brown,05/11/2026,333.00,Money Order,12
+C-1012,Kevin Brown,06/11/2026,333.00,Cash,13
+C-1012,Kevin Brown,07/11/2026,333.00,ACH,14
+C-1012,Kevin Brown,08/11/2026,333.00,Cash,15
+C-1012,Kevin Brown,09/11/2026,333.00,Cash,16
+C-1012,Kevin Brown,10/11/2026,333.00,ACH,17
+C-1013,Rosa Medina,01/22/2026,299.00,ACH,1
+C-1013,Rosa Medina,02/22/2026,299.00,ACH,2
+C-1013,Rosa Medina,03/22/2026,299.00,Debit Card,3
+C-1013,Rosa Medina,04/22/2026,299.00,ACH,4
+C-1013,Rosa Medina,05/22/2026,299.00,Money Order,5
+C-1013,Rosa Medina,06/22/2026,299.00,Debit Card,6
+C-1013,Rosa Medina,07/22/2026,299.00,ACH,7
+C-1013,Rosa Medina,08/22/2026,299.00,ACH,8
+C-1013,Rosa Medina,09/22/2026,299.00,Cash,9
+C-1013,Rosa Medina,10/22/2026,299.00,ACH,10
+C-1014,Andrés Torres,08/16/2026,455.00,Money Order,1
+C-1014,Andrés Torres,09/16/2026,455.00,ACH,2
+C-1014,Andrés Torres,10/16/2026,455.00,Cash,3
+C-1014,Andrés Torres,11/13/2026,455.00,Debit Card,4
+C-1015,Jessica Lee,06/09/2026,378.00,ACH,1
+C-1015,Jessica Lee,07/09/2026,378.00,ACH,2
+C-1015,Jessica Lee,08/09/2026,378.00,ACH,3
+C-1015,Jessica Lee,09/09/2026,378.00,ACH,4
+C-1015,Jessica Lee,10/09/2026,378.00,Debit Card,5
+C-1016,Fernando Díaz,02/25/2026,342.00,Debit Card,1
+C-1016,Fernando Díaz,03/25/2026,342.00,Money Order,2
+C-1016,Fernando Díaz,04/25/2026,342.00,Cash,3
+C-1016,Fernando Díaz,05/25/2026,342.00,Money Order,4
+C-1016,Fernando Díaz,06/25/2026,342.00,Cash,5
+C-1016,Fernando Díaz,07/25/2026,342.00,ACH,6
+C-1016,Fernando Díaz,08/25/2026,342.00,ACH,7
+C-1016,Fernando Díaz,09/25/2026,342.00,Debit Card,8
+C-1016,Fernando Díaz,10/25/2026,342.00,Cash,9
+C-1017,Gloria Vargas,04/12/2026,310.00,Debit Card,1
+C-1017,Gloria Vargas,05/12/2026,310.00,ACH,2
+C-1017,Gloria Vargas,06/12/2026,310.00,Cash,3
+C-1017,Gloria Vargas,07/12/2026,310.00,Money Order,4
+C-1017,Gloria Vargas,08/12/2026,310.00,Money Order,5
+C-1017,Gloria Vargas,09/12/2026,310.00,Cash,6
+C-1017,Gloria Vargas,10/12/2026,310.00,Cash,7
+C-1017,Gloria Vargas,11/13/2026,150.00,Cash,8
+C-1018,Tony Martínez,01/30/2026,399.00,Money Order,1
+C-1018,Tony Martínez,02/28/2026,399.00,Money Order,2
+C-1018,Tony Martínez,03/30/2026,399.00,Money Order,3
+C-1018,Tony Martínez,04/30/2026,399.00,Cash,4
+C-1018,Tony Martínez,05/30/2026,399.00,Money Order,5
+C-1018,Tony Martínez,06/30/2026,399.00,ACH,6
+C-1018,Tony Martínez,07/30/2026,399.00,Cash,7
+C-1018,Tony Martínez,08/30/2026,399.00,Debit Card,8
+C-1018,Tony Martínez,09/30/2026,399.00,Cash,9
+C-1018,Tony Martínez,10/30/2026,399.00,Debit Card,10
+C-1019,Sandra Ortiz,11/06/2025,288.00,Cash,1
+C-1019,Sandra Ortiz,12/06/2025,288.00,Debit Card,2
+C-1019,Sandra Ortiz,01/06/2026,288.00,ACH,3
+C-1019,Sandra Ortiz,02/06/2026,288.00,Cash,4
+C-1019,Sandra Ortiz,03/06/2026,288.00,Money Order,5
+C-1019,Sandra Ortiz,04/06/2026,288.00,Cash,6
+C-1019,Sandra Ortiz,05/06/2026,288.00,ACH,7
+C-1019,Sandra Ortiz,06/06/2026,288.00,Money Order,8
+C-1019,Sandra Ortiz,07/06/2026,288.00,Cash,9
+C-1019,Sandra Ortiz,08/06/2026,288.00,Money Order,10
+C-1019,Sandra Ortiz,09/06/2026,288.00,ACH,11
+C-1019,Sandra Ortiz,10/06/2026,288.00,Money Order,12
+C-1020,Brian Wilson,06/18/2026,420.00,Money Order,1
+C-1020,Brian Wilson,07/18/2026,420.00,Money Order,2
+C-1020,Brian Wilson,08/18/2026,420.00,Money Order,3
+C-1020,Brian Wilson,09/18/2026,420.00,ACH,4
+C-1020,Brian Wilson,10/18/2026,420.00,Debit Card,5
