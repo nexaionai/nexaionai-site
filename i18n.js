@@ -3,6 +3,26 @@
    To add or fix a translation: edit ES below (key = exact English text). */
 (function () {
   var ES = {
+
+    /* ---- Perfil aprobado 14-nov-2026 (dictamen Auditor + GO fundador) ---- */
+    "NEXAIONai | Technology and automation for businesses": "NEXAIONai | Tecnología y automatización para negocios",
+    "We build tools that help organize information, automate repetitive tasks, and follow up on pending items, with clear rules and human review where appropriate.": "Desarrollamos herramientas que ayudan a organizar información, automatizar tareas repetitivas y dar seguimiento a los pendientes, con reglas claras y revisión humana cuando corresponde",
+    "Operational tools built around clear rules.": "Herramientas operativas basadas en reglas claras.",
+    "Tools for dealers: task automation and follow-up with clear rules and human review where needed.": "Herramientas para dealers: automatización de tareas y seguimiento con reglas claras y revisión humana cuando corresponde.",
+    "How we work": "Cómo trabajamos",
+    "We use existing AI models for specific functions. Automated communications follow predefined messages and rules approved before use; individual messages do not require separate approval. We design tools to highlight cases that need attention and identify each product by its actual development status.": "Usamos modelos de IA existentes para funciones específicas. Las comunicaciones automatizadas siguen textos y reglas definidos y aprobados antes de su uso; no requieren aprobación individual de cada envío. Diseñamos herramientas para mostrar los casos que necesitan atención e identificamos cada producto según su estado real.",
+    "GrossKeep is a pilot-stage tool designed to record payment commitments, organize pending tasks, and support email follow-up under defined rules. Sending features remain subject to verification before operational use.": "GrossKeep es una herramienta en piloto para registrar compromisos de pago, organizar pendientes y preparar el seguimiento por correo electrónico según reglas definidas. Las funciones de envío están sujetas a verificación antes de su uso operativo.",
+    "SharKeep is a prototype that uses AI to draft replies to social media messages. It is being tested with one dealer, while safeguards and human review remain under validation. Not yet for sale.": "SharKeep es un prototipo que utiliza IA para preparar borradores de respuestas a mensajes de redes sociales. Se prueba con un dealer, con límites y revisión humana todavía sujetos a validación. No está a la venta.",
+    "LYNKQO is a development-stage tool, currently paused, for calculating self-employed income from bank statements. Its design uses AI to extract information and defined rules to calculate income. GrossKeep is our current priority.": "LYNKQO es una herramienta en desarrollo, actualmente en pausa, para calcular ingresos de trabajadores independientes a partir de estados de cuenta bancarios. Su diseño utiliza IA para extraer información y reglas definidas para calcular los ingresos. Primero terminamos GrossKeep.",
+    "Planned features, not yet available: automatic reminders, customer-reported payment notices, partial-payment tracking, and weekly summaries.": "Funciones previstas, todavía no disponibles: recordatorios automáticos, aviso de pago declarado por el cliente, registro de pagos parciales y resumen semanal.",
+    "Pilot in preparation": "Piloto en preparación",
+    "Prototype · Not yet for sale": "Prototipo · Todavía no está a la venta",
+    "Paused": "En pausa",
+    "sharkeep.com · Prototype · Not yet for sale": "sharkeep.com · Prototipo · Todavía no está a la venta",
+    "lynkqo.com · Paused": "lynkqo.com · En pausa",
+    "SharKeep by NEXAIONai: every message answered, every lead kept. Prototype. Not yet for sale.": "SharKeep por NEXAIONai: cada mensaje contestado, cada lead retenido. Prototipo. Todavía no está a la venta.",
+    "LYNKqo by NEXAIONai: self-employed income, calculated and explained. Paused.": "LYNKqo por NEXAIONai: income de self-employed, calculado y explicado. En pausa.",
+    "Link your dealership's Instagram, Facebook and WhatsApp.": "Vincula el Instagram, Facebook y WhatsApp de tu dealer.",
     /* ---- Titles & meta ---- */
     "NEXAIONai — AI automation for dealerships": "NEXAIONai — Automatización con IA para dealers",
     "NEXAIONai LLC builds simple AI automation for car dealerships. GrossKeep: track every pickup payment and send reminders.": "NEXAIONai LLC crea automatización con IA, simple, para dealers de carros. GrossKeep: controla cada pickup y envía recordatorios.",
