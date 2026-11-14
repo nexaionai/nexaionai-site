@@ -53,6 +53,7 @@
     "Our story": "Nuestra historia",
     "How it works": "Cómo funciona",
     "By": "Por",
+    "By NEXAIONai": "Por NEXAIONai",
     "Back to home": "Volver al inicio",
     "Built by": "Creado por",
     "Privacy": "Privacidad",

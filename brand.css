@@ -37,3 +37,8 @@
 
 /* Espacio entre «By/Por» y NEXAIONai dentro de enlaces flex (el espacio del texto se pierde en inline-flex) */
 a[href="index.html"].navlink .nm{margin-left:.35em}
+
+/* Logo nuevo en firmas de marca («Built by» / «By») — reemplaza el texto NEXAIONai estilizado */
+.byline{display:inline-flex;align-items:center;gap:.5em}
+.nxinline{display:inline-block;height:1.05em;width:auto;vertical-align:middle;position:relative;top:-.05em}
+.navlink.byline .nxinline{height:1.15em}
