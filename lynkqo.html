@@ -8,7 +8,13 @@
 <meta property="og:title" content="LYNKqo — by NEXAIONai">
 <meta property="og:description" content="LYNKqo by NEXAIONai: self-employed income, calculated and explained. Paused.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23000'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='700' font-size='34' fill='%23fff' text-anchor='middle'%3EN%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/svg+xml" href="media/favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="media/favicon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="media/apple-touch-icon.png">
+<meta property="og:image" content="https://nexaionai.com/media/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="theme-color" content="#000000">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600&amp;family=Barlow+Condensed:wght@500;600;700&amp;display=swap" rel="stylesheet">
 <style>
@@ -86,6 +92,7 @@ background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,1
 .motion .kb{animation:kb 24s ease-in-out infinite alternate}
 @media (prefers-reduced-motion:reduce){.motion *{animation:none!important;opacity:1!important}}
 </style>
+<link rel="stylesheet" href="brand.css">
 </head>
 <body>
 <div class="nx motion" style="width: 100%; background: #000000; overflow: hidden">
@@ -94,7 +101,7 @@ background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,1
 <a href="#top" class="navlink nxlogo" style="font-family: 'Barlow Condensed', sans-serif; font-size: 26px; letter-spacing: .2em; font-weight: 700">LYNKQO</a>
 <div class="nxhide" style="display: flex; flex-wrap: wrap; gap: 8px 28px; align-items: center">
 <a href="#how" class="navlink">How it works</a>
-<a href="index.html" class="navlink">By <span class="nm">NEXAIONai</span></a>
+<a href="index.html" class="navlink">By <span class="nm">NEXAION<span class="ai">ai</span></span></a>
 <a href="mailto:info@nexaionai.com?subject=LYNKqo" class="btn" style="min-height: 44px; padding: 0 20px">Get updates</a>
 </div>
 <div class="nxlang" style="display: flex; align-items: center" role="group" aria-label="Language"><button type="button" class="navlink" id="lang-en" aria-pressed="true" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #ffffff">EN</button><span style="color: #8a8a8a; padding: 0 4px">/</span><button type="button" class="navlink" id="lang-es" aria-pressed="false" style="background: none; border: 0; cursor: pointer; padding: 0 6px; min-width: 44px; justify-content: center; color: #8a8a8a">ES</button></div>
@@ -109,8 +116,11 @@ background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,1
 <h1 class="rise d1" style="font-size: clamp(44px, 7vw, 104px); line-height: .95; max-width: 1000px">Self-employed income, calculated and explained</h1>
 <p class="rise d2" style="margin: 0; font-size: clamp(17px, 1.6vw, 21px); line-height: 1.55; color: #d6d6d6; max-width: 640px; font-weight: 300">LYNKQO is a development-stage tool, currently paused, for calculating self-employed income from bank statements. Its design uses AI to extract information and defined rules to calculate income. GrossKeep is our current priority.</p>
 <div class="rise d3" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center"><a href="mailto:info@nexaionai.com?subject=LYNKqo" class="btn">Get updates</a><a href="#how" class="btn" style="border-color: rgba(255,255,255,.35)">How it works</a></div>
-<div class="rise d3" style="position: relative; width: 100%; max-width: 1200px; margin-top: 48px; aspect-ratio: 16 / 9; border-radius: 6px; overflow: hidden; background: #000000; box-shadow: 0 0 0 1px #1f1f1f, 0 0 120px rgba(70,130,230,.18), 0 50px 140px rgba(0,0,0,.9)">
-<video src="media/lynkqo.mp4" autoplay="autoplay" muted="muted" loop="loop" playsinline="playsinline" aria-label="LYNKqo product video" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block"></video>
+<div id="video" class="rise d3" style="width: 100%; max-width: 1200px; margin-top: 48px">
+<div class="vplay" data-src="media/lynkqo.mp4" data-label="LYNKqo product video">
+<img src="media/poster-lynkqo.webp" alt="" width="1280" height="720">
+<button type="button" class="playbtn" aria-label="Play LYNKqo video"><span class="tri" aria-hidden="true"></span>Watch video</button>
+</div>
 </div>
 </div>
 </section>
@@ -129,10 +139,10 @@ background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,1
 </section>
 <footer style="border-top: 1px solid #1a1a1a; background: #000000">
 <div style="max-width: 1440px; margin: 0 auto; padding: 40px 5% 0; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 8px 16px; justify-content: center; align-items: center; text-align: center; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #d6d6d6">
-<span>Built by <span class="nm">NEXAIONai</span></span><span aria-hidden="true" style="color: #555555">·</span><a href="mailto:info@nexaionai.com" class="navlink" style="font-size: 13px; min-height: 44px"><span class="nm">info@nexaionai.com</span></a>
+<span>Built by <span class="nm">NEXAION<span class="ai">ai</span></span></span><span aria-hidden="true" style="color: #555555">·</span><a href="mailto:info@nexaionai.com" class="navlink" style="font-size: 13px; min-height: 44px"><span class="nm">info@nexaionai.com</span></a>
 </div>
 <div style="max-width: 1440px; margin: 0 auto; padding: 48px 5%; box-sizing: border-box; display: flex; flex-wrap: wrap; gap: 20px 48px; justify-content: space-between; align-items: center; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: #a3a3a3">
-<span>LYNKqo is a product of <span class="nm">NEXAIONai</span> LLC · © 2026</span>
+<span>LYNKqo is a product of <span class="nm">NEXAION<span class="ai">ai</span></span> LLC · © 2026</span>
 <div style="display: flex; flex-wrap: wrap; gap: 8px 32px">
 <a href="mailto:info@nexaionai.com" class="navlink" style="font-size: 13px"><span class="nm">info@nexaionai.com</span></a>
 <a href="tel:+17543300001" class="navlink" style="font-size: 13px">(754) 330-0001</a>
@@ -144,5 +154,6 @@ background:radial-gradient(ellipse at center,rgba(235,244,255,.95) 0%,rgba(150,1
 </div>
 
 <script src="i18n.js"></script>
+<script src="video.js"></script>
 </body>
 </html>

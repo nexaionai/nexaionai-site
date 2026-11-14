@@ -1,0 +1,39 @@
+/* NEXAIONai — rediseño 14-nov-2026: logo «A con diamante», acento #3B9EFF, fotos fijas, video solo al clic.
+   Se carga DESPUÉS del <style> de cada página y solo sobreescribe lo necesario. */
+:root{--acc:#3B9EFF}
+
+/* Fondos animados retirados (estrellas, satélite, planeta, brillo): estilo foto fija */
+.stars,.sat,.planet,.sunglow,.lightsweep{display:none!important}
+
+/* Marca en texto: «NEXAION» fino + «ai» en minúscula y azul */
+.nm{font-weight:300}
+.nm .ai{color:var(--acc);text-transform:none}
+
+/* Logo en la navegación */
+.nxlogo{min-height:44px}
+.nxmark{display:block;height:26px;width:auto}
+@media (max-width:760px){.nxmark{height:20px}}
+
+/* Acento */
+.navlink:hover{color:var(--acc)}
+.btn:focus-visible,.navlink:focus-visible,.playbtn:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.eyebrow-acc{color:var(--acc)!important}
+
+/* HERO con foto fija a sangre */
+#top.hasphoto{min-height:100svh!important;display:flex;align-items:flex-end}
+#top.hasphoto>div:last-child{width:100%}
+.herobg{position:absolute;top:0;right:0;bottom:0;width:70%;height:100%;object-fit:cover;object-position:50% 20%}
+.heroshade{position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,#000 30%,rgba(0,0,0,.55) 48%,rgba(0,0,0,.05) 72%,rgba(0,0,0,.25) 100%),linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,#000 100%)}
+@media (max-width:760px){.heroshade{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.35) 35%,rgba(0,0,0,.9) 62%,#000 100%)}.herobg{width:100%;height:62%;object-position:50% 15%}}
+
+/* Póster fijo + video solo al clic */
+.vplay,.poster{position:relative;width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000;box-shadow:0 0 0 1px #1f1f1f,0 50px 140px rgba(0,0,0,.9);display:block}
+.vplay img,.poster img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.vplay video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;background:#000}
+.playbtn{position:absolute;left:24px;bottom:24px;display:inline-flex;align-items:center;gap:12px;min-height:48px;padding:0 22px 0 14px;border:0;border-radius:999px;background:rgba(0,0,0,.72);color:#fff;font:600 13px 'Barlow',system-ui,sans-serif;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;text-decoration:none;backdrop-filter:blur(6px)}
+.playbtn .tri{width:32px;height:32px;border-radius:50%;background:var(--acc);position:relative;flex:none}
+.playbtn .tri::after{content:"";position:absolute;left:12px;top:9px;border-left:11px solid #fff;border-top:7px solid transparent;border-bottom:7px solid transparent}
+.playbtn:hover{background:rgba(0,0,0,.9);color:#fff}
+
+/* Espacio entre «By/Por» y NEXAIONai dentro de enlaces flex (el espacio del texto se pierde en inline-flex) */
+a[href="index.html"].navlink .nm{margin-left:.35em}

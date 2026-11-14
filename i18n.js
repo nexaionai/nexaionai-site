@@ -4,6 +4,14 @@
 (function () {
   var ES = {
 
+    /* ---- Rediseño 14-nov-2026: video al clic ---- */
+    "Watch video": "Ver video",
+    "Play GrossKeep video": "Reproducir video de GrossKeep",
+    "Play SharKeep video": "Reproducir video de SharKeep",
+    "Play LYNKqo video": "Reproducir video de LYNKqo",
+    "SharKeep video": "Video de SharKeep",
+    "LYNKqo video": "Video de LYNKqo",
+
     /* ---- Perfil aprobado 14-nov-2026 (dictamen Auditor + GO fundador) ---- */
     "NEXAIONai | Technology and automation for businesses": "NEXAIONai | Tecnología y automatización para negocios",
     "We build tools that help organize information, automate repetitive tasks, and follow up on pending items, with clear rules and human review where appropriate.": "Desarrollamos herramientas que ayudan a organizar información, automatizar tareas repetitivas y dar seguimiento a los pendientes, con reglas claras y revisión humana cuando corresponde",
@@ -197,8 +205,9 @@
     if (v) {
       var src = es ? "media/grosskeep-es.mp4" : "media/grosskeep-en.mp4";
       if (v.getAttribute("src") !== src) {
+        var wasPlaying = !v.paused;
         v.setAttribute("src", src); v.load();
-        var p = v.play(); if (p && p.catch) p.catch(function () {});
+        if (wasPlaying) { var p = v.play(); if (p && p.catch) p.catch(function () {}); }
       }
     }
 
