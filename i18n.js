@@ -7,20 +7,21 @@
     /* ---- Rediseño 14-nov-2026: video al clic ---- */
     "Watch video": "Ver video",
     "Play GrossKeep video": "Reproducir video de GrossKeep",
-    "Play SharKeep video": "Reproducir video de SharKeep",
     "Play LYNKqo video": "Reproducir video de LYNKqo",
-    "SharKeep video": "Video de SharKeep",
     "LYNKqo video": "Video de LYNKqo",
 
     /* ---- Perfil aprobado 14-nov-2026 (dictamen Auditor + GO fundador) ---- */
     "NEXAIONai | Technology and automation for businesses": "NEXAIONai | Tecnología y automatización para negocios",
     "We build tools that help organize information, automate repetitive tasks, and follow up on pending items, with clear rules and human review where appropriate.": "Desarrollamos herramientas que ayudan a organizar información, automatizar tareas repetitivas y dar seguimiento a los pendientes, con reglas claras y revisión humana cuando corresponde",
-    "Operational tools built around clear rules.": "Herramientas operativas basadas en reglas claras.",
+    "Automate your dealership's operations without losing control.": "Automatiza la operación de tu dealer sin perder el control.",
     "Tools for dealers: task automation and follow-up with clear rules and human review where needed.": "Herramientas para dealers: automatización de tareas y seguimiento con reglas claras y revisión humana cuando corresponde.",
     "How we work": "Cómo trabajamos",
-    "We use existing AI models for specific functions. Automated communications follow predefined messages and rules approved before use; individual messages do not require separate approval. We design tools to highlight cases that need attention and identify each product by its actual development status.": "Usamos modelos de IA existentes para funciones específicas. Las comunicaciones automatizadas siguen textos y reglas definidos y aprobados antes de su uso; no requieren aprobación individual de cada envío. Diseñamos herramientas para mostrar los casos que necesitan atención e identificamos cada producto según su estado real.",
+    "We use existing AI models for specific functions, and each product works under its own rules.": "Usamos modelos de IA existentes para funciones específicas, y cada producto funciona con sus propias reglas.",
+    "GrossKeep operates through deterministic rules pre-approved by the dealer. Scheduled alerts and reminders are sent automatically based on configured parameters, without requiring individual manual validation for each message.": "GrossKeep opera mediante reglas deterministas preaprobadas por el dealer. Las alertas y recordatorios programados se envían de forma automatizada según los parámetros configurados, sin requerir una validación manual individual por cada mensaje.",
+    "SharKeep is designed to automatically respond to inquiries received through your dealership's social media channels, following configured rules, instructions, and limits. It currently operates as a prototype in testing with one dealership, distinguishing intended capabilities from features already implemented and validated. Cases requiring special attention may be referred to a person, depending on the enabled rules and features.": "SharKeep está diseñado para responder automáticamente a las consultas que recibe tu dealer en sus redes sociales, siguiendo las reglas, instrucciones y límites configurados. Actualmente opera como un prototipo en pruebas con un dealer, diferenciando la capacidad prevista de las funciones ya implementadas y validadas. Los casos que requieren atención especial pueden derivarse a una persona, según las reglas y funciones habilitadas.",
+    "We design tools to highlight cases that need attention and identify each product by its actual development status.": "Diseñamos herramientas para mostrar los casos que necesitan atención e identificamos cada producto según su estado real.",
     "GrossKeep is a pilot-stage tool designed to record payment commitments, organize pending tasks, and support email follow-up under defined rules. Sending features remain subject to verification before operational use.": "GrossKeep es una herramienta en piloto para registrar compromisos de pago, organizar pendientes y preparar el seguimiento por correo electrónico según reglas definidas. Las funciones de envío están sujetas a verificación antes de su uso operativo.",
-    "SharKeep is a prototype that uses AI to draft replies to social media messages. It is being tested with one dealer, while safeguards and human review remain under validation. Not yet for sale.": "SharKeep es un prototipo que utiliza IA para preparar borradores de respuestas a mensajes de redes sociales. Se prueba con un dealer, con límites y revisión humana todavía sujetos a validación. No está a la venta.",
+    "SharKeep is designed to automatically respond to inquiries on your dealership's social media channels under defined rules and limits; currently a prototype in testing with one dealership, routing cases that require it to a person.": "SharKeep está diseñado para responder automáticamente a las consultas en las redes sociales de tu dealer según reglas y límites definidos; actualmente es un prototipo en pruebas con un dealer y deriva a una persona los casos que lo requieran.",
     "LYNKQO is a development-stage tool, currently paused, for calculating self-employed income from bank statements. Its design uses AI to extract information and defined rules to calculate income. GrossKeep is our current priority.": "LYNKQO es una herramienta en desarrollo, actualmente en pausa, para calcular ingresos de trabajadores independientes a partir de estados de cuenta bancarios. Su diseño utiliza IA para extraer información y reglas definidas para calcular los ingresos. Primero terminamos GrossKeep.",
     "Planned features, not yet available: automatic reminders, customer-reported payment notices, partial-payment tracking, and weekly summaries.": "Funciones previstas, todavía no disponibles: recordatorios automáticos, aviso de pago declarado por el cliente, registro de pagos parciales y resumen semanal.",
     "Pilot in preparation": "Piloto en preparación",
@@ -30,16 +31,11 @@
     "lynkqo.com · Paused": "lynkqo.com · En pausa",
     "SharKeep by NEXAIONai: every message answered, every lead kept. Prototype. Not yet for sale.": "SharKeep por NEXAIONai: cada mensaje contestado, cada lead retenido. Prototipo. Todavía no está a la venta.",
     "LYNKqo by NEXAIONai: self-employed income, calculated and explained. Paused.": "LYNKqo por NEXAIONai: income de self-employed, calculado y explicado. En pausa.",
-    "Link your dealership's Instagram, Facebook and WhatsApp.": "Vincula el Instagram, Facebook y WhatsApp de tu dealer.",
     /* ---- Titles & meta ---- */
-    "NEXAIONai — AI automation for dealerships": "NEXAIONai — Automatización con IA para dealers",
-    "NEXAIONai LLC builds simple AI automation for car dealerships. GrossKeep: track every pickup payment and send reminders.": "NEXAIONai LLC crea automatización con IA, simple, para dealers de carros. GrossKeep: controla cada pickup y envía recordatorios.",
     "Our Story — NEXAIONai": "Nuestra historia — NEXAIONai",
     "The story behind NEXAIONai: 25 years in the dealer business.": "La historia detrás de NEXAIONai: 25 años en el negocio de dealers.",
     "LYNKqo — by NEXAIONai": "LYNKqo — por NEXAIONai",
-    "LYNKqo by NEXAIONai: self-employed income, calculated and explained. In development.": "LYNKqo por NEXAIONai: income de self-employed, calculado y explicado. En desarrollo.",
     "SharKeep — by NEXAIONai": "SharKeep — por NEXAIONai",
-    "SharKeep by NEXAIONai: every message answered, every lead kept. Coming soon.": "SharKeep por NEXAIONai: cada mensaje contestado, cada lead retenido. Muy pronto.",
     "Privacy Policy — NEXAIONai": "Política de privacidad — NEXAIONai",
     "NEXAIONai privacy policy — coming soon.": "Política de privacidad de NEXAIONai — muy pronto.",
     "Terms of Service — NEXAIONai": "Términos de servicio — NEXAIONai",
@@ -62,46 +58,26 @@
     "Join the waitlist": "Unirme a la lista de espera",
 
     /* ---- Home: hero ---- */
-    "AI automation that keeps your business moving": "Automatización con IA que mantiene tu negocio en movimiento",
-    "We build simple, powerful products that make dealerships faster and stop money from slipping through the cracks.": "Creamos productos simples y poderosos que hacen al dealer más rápido y evitan que se te escape el dinero.",
     "Explore GrossKeep": "Conoce GrossKeep",
 
     /* ---- Home: GrossKeep ---- */
-    "Live": "Disponible",
     "Track every payment since Day 1. Protect your gross.": "Controla cada pago desde el Día 1. Cuida tu gross.",
-    "GrossKeep helps dealers track pickup-payment commitments and send reminders. Customers get a friendly WhatsApp or text reminder and confirm with one tap. The owner sees everything in one weekly summary.": "GrossKeep ayuda al dealer a controlar los pickups que el cliente se comprometió a pagar y a enviar recordatorios. El cliente recibe un recordatorio amable por WhatsApp o texto y confirma con un toque. El dueño ve todo en un resumen semanal.",
     "GrossKeep video": "Video de GrossKeep",
     "First month free": "Primer mes gratis",
     "Then": "Luego",
     "$149/month": "$149/mes",
     "Start free month · then $149/month": "Empieza el mes gratis · luego $149/mes",
-    "Automatic reminders": "Recordatorios automáticos",
-    "WhatsApp and text. One message a week, never spam.": "WhatsApp y texto. Un mensaje por semana, nunca spam.",
-    "“I paid” button": "Botón “Ya pagué”",
-    "The customer confirms in one tap.": "El cliente confirma con un toque.",
-    "Partial payments": "Pagos parciales",
-    "Any amount, any time. Your rules.": "Cualquier monto, cuando sea. Tus reglas.",
-    "Weekly owner summary": "Resumen semanal para el dueño",
-    "Problem cases rise to the top on their own.": "Los casos con problema suben solos al principio.",
 
     /* ---- Home: SharKeep ---- */
     "Coming soon": "Muy pronto",
     "Every message answered. Every lead kept.": "Cada mensaje contestado. Cada lead retenido.",
-    "Your dealership's own AI answers Instagram, Facebook and WhatsApp messages in seconds, day and night. Will be built on Meta's official API.": "La IA propia de tu dealer contesta los mensajes de Instagram, Facebook y WhatsApp en segundos, de día y de noche. Se construirá sobre la API oficial de Meta.",
-    "SharKeep product video: social media messages answered automatically by the dealership AI": "Video de SharKeep: mensajes de redes sociales contestados automáticamente por la IA del dealer",
     "Your own AI": "Tu propia IA",
     "Speaks for your dealership, in your name.": "Habla por tu dealer, a tu nombre.",
-    "All channels": "Todos los canales",
-    "Instagram, Facebook and WhatsApp in one place.": "Instagram, Facebook y WhatsApp en un solo lugar.",
-    "Midnight messages get answered too.": "Los mensajes de medianoche también se contestan.",
-    "Official API": "API oficial",
-    "Will be built the legal way, on Meta's platform.": "Se construirá de forma legal, en la plataforma de Meta.",
+    "Planned channels": "Canales previstos",
+    "Instagram, Facebook and WhatsApp, through Meta's official API.": "Instagram, Facebook y WhatsApp, a través de la API oficial de Meta.",
 
     /* ---- Home: LYNKqo ---- */
-    "In development": "En desarrollo",
     "Self-employed income, calculated and explained.": "Income de self-employed, calculado y explicado.",
-    "LYNKqo reads the bank statements, classifies every transaction and breaks income down period by period, so the deal you structure is backed by numbers that hold up and is less likely to come back.": "LYNKqo lee los bank statements, clasifica cada transacción y desglosa el income periodo por periodo, para que el deal que estructuras esté respaldado por números sólidos y sea menos probable que te lo devuelvan.",
-    "LYNKqo product video: bank statement transactions classified and income broken down by period": "Video de LYNKqo: transacciones del bank statement clasificadas e income desglosado por periodo",
     "Every transaction classified": "Cada transacción clasificada",
     "Income or excluded, with the reason.": "Income o excluida, con su razón.",
     "Period breakdown": "Desglose por periodo",
@@ -135,9 +111,7 @@
     "Talk to us": "Habla con nosotros",
 
     /* ---- LYNKqo page ---- */
-    "lynkqo.com · In development": "lynkqo.com · En desarrollo",
     "Self-employed income, calculated and explained": "Income de self-employed, calculado y explicado",
-    "LYNKqo turns bank statements into a clear, period-by-period income breakdown, so every deal you structure is backed by numbers that hold up.": "LYNKqo convierte los bank statements en un desglose de income claro, periodo por periodo, para que cada deal que estructuras esté respaldado por números sólidos.",
     "LYNKqo product video": "Video de LYNKqo",
     "Upload statements": "Sube los statements",
     "Usually three consecutive months, straight from the PDF.": "Normalmente tres meses consecutivos, directo del PDF.",
@@ -148,14 +122,11 @@
     "LYNKqo is a product of": "LYNKqo es un producto de",
 
     /* ---- SharKeep page ---- */
-    "sharkeep.com · Coming soon": "sharkeep.com · Muy pronto",
-    "Your dealership's own AI on social media": "La IA propia de tu dealer en redes sociales",
-    "SharKeep answers every Instagram, Facebook and WhatsApp message in seconds, day and night, so no lead goes cold while your team sleeps.": "SharKeep contesta cada mensaje de Instagram, Facebook y WhatsApp en segundos, de día y de noche, para que ningún lead se enfríe mientras tu equipo duerme.",
-    "SharKeep product video": "Video de SharKeep",
+    "Your own AI, trained to handle your dealership's social media": "Tu propia IA entrenada para atender las redes sociales de tu dealer",
     "Connect your pages": "Conecta tus páginas",
-    "Link your dealership's Instagram, Facebook and WhatsApp. It will connect through Meta's official API.": "Vincula el Instagram, Facebook y WhatsApp de tu dealer. Se conectará a través de la API oficial de Meta.",
-    "Your AI answers": "Tu IA contesta",
-    "Every new message gets a fast, friendly reply in your dealership's name.": "Cada mensaje nuevo recibe una respuesta rápida y amable a nombre de tu dealer.",
+    "Your dealership's Instagram, Facebook and WhatsApp, connected through Meta's official API (in development).": "El Instagram, Facebook y WhatsApp de tu dealer, conectados a través de la API oficial de Meta (en desarrollo).",
+    "Your AI replies": "Tu IA responde",
+    "Your AI can automatically respond to inquiries covered by the configured rules, on behalf of your dealership. Cases requiring special attention may be referred to a person.": "Tu IA puede responder automáticamente a las consultas cubiertas por las reglas configuradas, a nombre de tu dealer. Los casos que requieren atención especial pueden derivarse a una persona.",
     "Your team closes": "Tu equipo cierra",
     "Conversations that are ready go to your people to finish the deal.": "Las conversaciones listas pasan a tu gente para cerrar el deal.",
     "SharKeep is a product of": "SharKeep es un producto de",
@@ -200,6 +171,14 @@
     metas.forEach(function (m) { m.el.setAttribute("content", es && ES[norm(m.en)] ? ES[norm(m.en)] : m.en); });
     document.title = es && ES[norm(origTitle)] ? ES[norm(origTitle)] : origTitle;
     document.documentElement.lang = es ? "es" : "en";
+
+    /* Images with text inside: show the version in the active language */
+    document.querySelectorAll("img[data-es-src]").forEach(function (img) {
+      if (!img.getAttribute("data-en-src")) img.setAttribute("data-en-src", img.getAttribute("src"));
+      img.setAttribute("src", es ? img.getAttribute("data-es-src") : img.getAttribute("data-en-src"));
+    });
+    /* Elements that only make sense in English (e.g. an English-only video) */
+    document.querySelectorAll("[data-en-only]").forEach(function (el) { el.style.display = es ? "none" : ""; });
 
     /* GrossKeep video follows the site language */
     var v = document.getElementById("gkvideo");
