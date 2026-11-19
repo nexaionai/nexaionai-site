@@ -124,7 +124,7 @@
     /* ---- SharKeep page ---- */
     "Your own AI, trained to handle your dealership's social media": "Tu propia IA entrenada para atender las redes sociales de tu dealer",
     "Connect your pages": "Conecta tus páginas",
-    "Your dealership's Instagram, Facebook and WhatsApp, connected through Meta's official API (in development).": "El Instagram, Facebook y WhatsApp de tu dealer, conectados a través de la API oficial de Meta (en desarrollo).",
+    "Connect your dealership's Facebook Marketplace, Instagram and TikTok. WhatsApp and integration through Meta's official API are still in development.": "Conecta Facebook Marketplace, Instagram y TikTok de tu dealer. WhatsApp y la integración mediante la API oficial de Meta siguen en desarrollo.",
     "Your AI replies": "Tu IA responde",
     "Your AI can automatically respond to inquiries covered by the configured rules, on behalf of your dealership. Cases requiring special attention may be referred to a person.": "Tu IA puede responder automáticamente a las consultas cubiertas por las reglas configuradas, a nombre de tu dealer. Los casos que requieren atención especial pueden derivarse a una persona.",
     "Your team closes": "Tu equipo cierra",
