@@ -180,7 +180,7 @@
     /* Videos with text inside: show the poster in the active language */ document.querySelectorAll("video[data-es-poster]").forEach(function (v) { if (!v.getAttribute("data-en-poster")) v.setAttribute("data-en-poster", v.getAttribute("poster")); v.setAttribute("poster", es ? v.getAttribute("data-es-poster") : v.getAttribute("data-en-poster")); }); /* Elements that only make sense in English (e.g. an English-only video) */
     document.querySelectorAll("[data-en-only]").forEach(function (el) { el.style.display = es ? "none" : ""; });
 
-    /* GrossKeep video follows the site language */
+    /* SharKeep video: show the 17s version in Spanish, the current video in English */ document.querySelectorAll("video[data-es-src]").forEach(function (v) { if (!v.getAttribute("data-en-src")) v.setAttribute("data-en-src", v.getAttribute("src") || "media/sharkeep.mp4"); var src = es ? v.getAttribute("data-es-src") : v.getAttribute("data-en-src"); if (v.getAttribute("src") !== src) { var wasPlaying = !v.paused; v.setAttribute("src", src); v.load(); if (wasPlaying || v.hasAttribute("autoplay")) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } } }); /* GrossKeep video follows the site language */
     var v = document.getElementById("gkvideo");
     if (v) {
       var src = es ? "media/grosskeep-es.mp4" : "media/grosskeep-en.mp4";
