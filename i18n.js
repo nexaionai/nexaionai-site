@@ -75,8 +75,8 @@
     "Every message answered. Every lead kept.": "Cada mensaje contestado. Cada lead retenido.",
     "Your own AI": "Tu propia IA",
     "Speaks for your dealership, in your name.": "Habla por tu dealer, a tu nombre.",
-    "Planned channels": "Canales previstos",
-    "Instagram, Facebook and WhatsApp, through Meta's official API.": "Instagram, Facebook y WhatsApp, a través de la API oficial de Meta.",
+    "Planned channels": "Canales planificados",
+    "Facebook Marketplace, Instagram and TikTok.": "Facebook Marketplace, Instagram y TikTok.",
 
     /* ---- Home: LYNKqo ---- */
     "Self-employed income, calculated and explained.": "Income de self-employed, calculado y explicado.",
