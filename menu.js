@@ -8,7 +8,7 @@
   menu.className = "nxmenu"; menu.id = "nxmenu";
   links.forEach(function (a) {
     var c = document.createElement("a");
-    c.href = a.getAttribute("href"); c.textContent = a.textContent;
+    c.href = a.getAttribute("href"); var im = a.querySelector("img[alt]"); c.textContent = (a.textContent + (im ? im.alt : "")).replace(/\s+/g, " ").trim();
     menu.appendChild(c);
   });
   var btn = document.createElement("button");
@@ -28,6 +28,6 @@
   document.addEventListener("keydown", function (e) { if (e.key === "Escape") close(); });
   /* El idioma traduce los textos del header; el menú repite el texto al abrir */
   btn.addEventListener("click", function () {
-    var i = 0; menu.querySelectorAll("a").forEach(function (c) { c.textContent = links[i++].textContent; });
+    var i = 0; menu.querySelectorAll("a").forEach(function (c) { var a = links[i++], im = a.querySelector("img[alt]"); c.textContent = (a.textContent + (im ? im.alt : "")).replace(/\s+/g, " ").trim(); });
   });
 })();
