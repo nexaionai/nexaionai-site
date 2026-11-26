@@ -1,7 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="NEXAIONai">
-  <!-- NEXAIONai · favicon «A con diamante» · fondo negro · acento #3B9EFF -->
+  <!-- NEXAIONai · favicon = símbolo A (orden del fundador 25-nov-2026) · fondo negro · acento #3B9EFF -->
   <rect width="512" height="512" fill="#000000"/>
-  <path fill="#FFFFFF" d="M225.6,71.7 L286.4,71.7 L147.3,440.3 L86.4,440.3Z"/>
-  <path fill="#FFFFFF" d="M225.6,71.7 L286.4,71.7 L425.6,440.3 L364.7,440.3Z"/>
-  <path fill="#3B9EFF" d="M256.0,267.1 L304.9,329.7 L256.0,392.4 L207.1,329.7Z"/>
+  <g transform="translate(4.68 -37.75) scale(0.65278)">
+  <defs><mask id="nxslitf"><rect x="0" y="0" width="1000" height="1000" fill="#fff"/><polygon points="385,392 497,290 522,318 410,420" fill="#000"/></mask></defs>
+  <polygon fill="#FFFFFF" points="100,240 665,800 565,800 185,422 185,800 100,800"/>
+  <polygon fill="#FFFFFF" points="228,292 372,100 372,415"/>
+  <polygon fill="#3B9EFF" mask="url(#nxslitf)" points="390,108 487,240 665,205 645,458 577,392 452,510 397,455"/>
+  <polygon fill="#3B9EFF" points="200,768 200,655 255,600 258,558 333,633"/>
+  </g>
 </svg>

@@ -55,7 +55,7 @@
     "Privacy": "Privacidad",
     "Terms": "Términos",
     "Get updates": "Recibir novedades",
-    "Join the waitlist": "Unirme a la lista de espera",
+    "Ask us what it's worth": "Pregúntanos cuánto vale",
 
     /* ---- Home: hero ---- */
     "Explore GrossKeep": "Conoce GrossKeep",
