@@ -55,7 +55,7 @@
     "Privacy": "Privacidad",
     "Terms": "Términos",
     "Get updates": "Recibir novedades",
-    "Ask us": "Pregúntanos",
+    "Ask us what it's worth": "Pregúntanos cuánto vale",
 
     /* ---- Home: hero ---- */
     "Explore GrossKeep": "Conoce GrossKeep",

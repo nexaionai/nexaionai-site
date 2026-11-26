@@ -10,10 +10,10 @@
 .nm .ai{color:var(--acc);text-transform:none}
 
 /* Logo en la navegación */
-.nxlogo{min-height:44px;display:inline-flex!important;align-items:center;gap:12px}
+.nxlogo{min-height:44px;display:inline-flex!important;align-items:center;gap:16px}
 .nxsym{display:block;height:34px;width:auto}
 .nxmark{display:block;height:26px;width:auto}
-@media (max-width:760px){.nxmark{height:20px}.nxsym{height:26px}.nxlogo{gap:9px}}
+@media (max-width:760px){.nxmark{height:20px}.nxsym{height:26px}.nxlogo{gap:12px}}
 
 /* Acento */
 .navlink:hover{color:var(--acc)}
@@ -24,8 +24,8 @@
 #top.hasphoto{min-height:100svh!important;display:flex;align-items:flex-end}
 #top.hasphoto>div:last-child{width:100%}
 .herobg{position:absolute;top:0;right:0;bottom:0;width:70%;height:100%;object-fit:cover;object-position:50% 20%}
-.heroshade{position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,#000 30%,rgba(0,0,0,.55) 48%,rgba(0,0,0,.05) 72%,rgba(0,0,0,.25) 100%),linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,#000 100%)}
-@media (max-width:760px){.heroshade{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.35) 35%,rgba(0,0,0,.9) 62%,#000 100%)}.herobg{width:100%;height:62%;object-position:50% 15%}}
+.heroshade{position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,#000 30%,rgba(0,0,0,.55) 48%,rgba(0,0,0,.18) 72%,rgba(0,0,0,.3) 100%),linear-gradient(180deg,rgba(0,0,0,.55) 0%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 70%,#000 100%)}
+@media (max-width:760px){.heroshade{background:linear-gradient(180deg,rgba(0,0,0,.5) 0%,rgba(0,0,0,.45) 35%,rgba(0,0,0,.9) 62%,#000 100%)}.herobg{width:100%;height:62%;object-position:50% 15%}}
 
 /* Póster fijo + video solo al clic */
 .vplay,.poster{position:relative;width:100%;aspect-ratio:16/9;border-radius:6px;overflow:hidden;background:#000;box-shadow:0 0 0 1px #1f1f1f,0 50px 140px rgba(0,0,0,.9);display:block}
@@ -43,3 +43,24 @@ a[href="index.html"].navlink .nm{margin-left:.35em}
 .byline{display:inline-flex;align-items:center;gap:.5em}
 .nxinline{display:inline-block;height:1.05em;width:auto;vertical-align:middle;position:relative;top:-.05em}
 .navlink.byline .nxinline{height:1.15em}
+/* Header en una sola fila en escritorio mediano (761–1199 px): gaps más cortos. Preview 25-nov-2026 */
+@media (min-width:761px) and (max-width:1199px){.nxnav{gap:12px 20px!important}.nxnav>.nxhide{gap:8px 18px!important}.nxsym{height:30px}.nxlogo{gap:14px}}
+@media (min-width:940px) and (max-width:1199px){.nxnav,.nxnav>.nxhide{flex-wrap:nowrap!important}}
+
+/* Botones del hero (dictamen visual 25-nov-2026): GrossKeep azul con texto negro; Our story transparente con borde blanco */
+.btn.btn-acc{background:#3B9EFF;border-color:#3B9EFF;color:#000}
+.btn.btn-acc:hover{background:#fff;border-color:#fff;color:#000}
+.btn.btn-ghost{background:transparent;border-color:#fff;color:#fff}
+/* Menú móvil minimalista (≤760 px) */
+.nxmenubtn{display:none}
+.nxmenu{display:none}
+@media (max-width:760px){
+.nxnav{gap:8px!important}.nxnav>div:last-child{gap:4px!important}
+.nxmenubtn{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;margin-left:0;background:none;border:1px solid rgba(255,255,255,.35);color:#fff;cursor:pointer;padding:0}
+.nxmenubtn span,.nxmenubtn span::before,.nxmenubtn span::after{display:block;width:18px;height:1.5px;background:#fff;position:relative;content:""}
+.nxmenubtn span::before{position:absolute;top:-6px}.nxmenubtn span::after{position:absolute;top:6px}
+.nxmenu{display:none;position:absolute;top:100%;left:0;right:0;background:#000;border-top:1px solid rgba(255,255,255,.15);border-bottom:1px solid rgba(255,255,255,.15);padding:8px 5% 20px}
+.nxmenu.open{display:block}
+.nxmenu a{display:flex;align-items:center;min-height:48px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.1)}
+.nxmenu a:last-child{border-bottom:0}
+}
