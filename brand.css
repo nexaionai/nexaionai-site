@@ -65,3 +65,7 @@ a[href="index.html"].navlink .nm{margin-left:.35em}
 .nxmenu a{display:flex;align-items:center;min-height:48px;color:#fff;text-decoration:none;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid rgba(255,255,255,.1)}
 .nxmenu a:last-child{border-bottom:0}
 }
+
+/* Parallax del hero (25-nov-2026): solo transform, movido por parallax.js */
+#top .herobg,#top>div:last-child{will-change:transform}
+@media (prefers-reduced-motion:reduce){#top .herobg,#top>div:last-child{transform:none!important}}
