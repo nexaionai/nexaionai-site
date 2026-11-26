@@ -16,12 +16,13 @@
     ticking = false;
     if (mq.matches) { reset(); return; }
     var h = hero.offsetHeight;
-    var y = Math.min(Math.max(window.scrollY || window.pageYOffset || 0, 0), h);
+    /* Distancia que el hero ya subió: vale igual si hace scroll la ventana o el <body> (p. ej. dentro de un visor) */
+    var y = Math.min(Math.max(-hero.getBoundingClientRect().top, 0), h);
     photo.style.transform = "translate3d(0," + (y * PHOTO).toFixed(2) + "px,0)";
     text.style.transform = "translate3d(0," + (-y * TEXT).toFixed(2) + "px,0)";
   }
   function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(update); } }
-  window.addEventListener("scroll", onScroll, { passive: true });
+  document.addEventListener("scroll", onScroll, { passive: true, capture: true });
   window.addEventListener("resize", onScroll);
   if (mq.addEventListener) mq.addEventListener("change", update);
   update();
