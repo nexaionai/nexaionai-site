@@ -11,9 +11,9 @@
 
 /* Logo en la navegación */
 .nxlogo{min-height:44px;display:inline-flex!important;align-items:center;gap:16px}
-.nxsym{display:block;height:34px;width:auto}
+.nxsym{display:block;height:34px;width:auto;position:relative;top:-1px}
 .nxmark{display:block;height:26px;width:auto}
-@media (max-width:760px){.nxmark{height:20px}.nxsym{height:26px}.nxlogo{gap:12px}}
+@media (max-width:760px){.nxmark{height:20px}.nxsym{height:26px;top:-.75px}.nxlogo{gap:12px}}
 
 /* Acento */
 .navlink:hover{color:var(--acc)}
@@ -47,6 +47,7 @@ a[href="index.html"].navlink .nm{margin-left:.35em}
 @media (min-width:761px) and (max-width:1199px){.nxnav{gap:12px 20px!important}.nxnav>.nxhide{gap:8px 18px!important}.nxsym{height:30px}.nxlogo{gap:14px}}
 @media (min-width:940px) and (max-width:1199px){.nxnav,.nxnav>.nxhide{flex-wrap:nowrap!important}}
 
+/* Centrado óptico del símbolo (25-nov): la base blanca de la N cae bajo la línea base del wordmark; se sube 1 px (0.75 px en móvil) */
 /* Botones del hero (dictamen visual 25-nov-2026): GrossKeep azul con texto negro; Our story transparente con borde blanco */
 .btn.btn-acc{background:#3B9EFF;border-color:#3B9EFF;color:#000}
 .btn.btn-acc:hover{background:#fff;border-color:#fff;color:#000}
