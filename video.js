@@ -9,7 +9,8 @@
       var src = (es && box.getAttribute("data-es")) || box.getAttribute("data-src");
       var v = document.createElement("video");
       if (box.getAttribute("data-id")) v.id = box.getAttribute("data-id");
-      v.src = src; v.controls = true; v.playsInline = true; v.setAttribute("playsinline", "");
+      v.src = src; v.controls = true; v.playsInline = true;
+      v.setAttribute("playsinline", ""); v.setAttribute("webkit-playsinline", "");
       v.setAttribute("aria-label", box.getAttribute("data-label") || "");
       box.innerHTML = ""; box.appendChild(v);
       var p = v.play(); if (p && p.catch) p.catch(function () {});

@@ -80,5 +80,5 @@ a[href="index.html"].navlink .nm{margin-left:.35em}
 @media (min-width:761px) and (max-width:1199px){.nxbackwrap{gap:14px}.nxback{padding-right:14px}.nxbackwrap .nxlogo{font-size:20px!important;letter-spacing:.12em!important}.nxnav:has(.nxbackwrap),.nxnav:has(.nxbackwrap)>.nxhide{flex-wrap:wrap!important}}
 
 /* Header siempre por encima del contenido que se mueve con el parallax (Safari/WebKit: los clics deben llegar al header) */
-header{z-index:100!important}
-header .nxnav{position:relative;z-index:101}
+header{position:fixed!important;top:0;left:0;right:0;z-index:1000!important}
+header .nxnav{position:relative;z-index:1001}
