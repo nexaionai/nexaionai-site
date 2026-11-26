@@ -5,8 +5,7 @@
 (function () {
   var mq = window.matchMedia("(prefers-reduced-motion: reduce)");
   var MEDIA_SEL = ".vplay, .poster";
-  var HEAD_SEL = "h1, h2, h3";
-
+  
   /* ---------- 1. Hero de la principal (foto a sangre): ajuste original ---------- */
   var hero = document.querySelector("#top.hasphoto");
   var hPhoto = hero && hero.querySelector(".herobg");
@@ -27,18 +26,22 @@
     S.querySelectorAll(MEDIA_SEL).forEach(function (m) {
       if (!m.parentElement.closest(MEDIA_SEL)) media.push(m);
     });
-    S.querySelectorAll(HEAD_SEL).forEach(function (h) {
-      var col = h.parentElement;
-      for (var i = 0; i < col.children.length; i++) {
-        var c = col.children[i];
-        if (seen.has(c)) continue;
-        seen.add(c);
-        if (c.matches(MEDIA_SEL) || c.querySelector(MEDIA_SEL)) continue;        /* el video va aparte */
-        if (!c.matches(HEAD_SEL) && c.querySelector(HEAD_SEL)) continue;       /* contenedor de tarjetas: se mueven sus hijos */
-        if (c.getAttribute("aria-hidden") === "true") continue;               /* decoración */
-        text.push(c);
-      }
-    });
+    /* Letras: todo bloque con texto propio (títulos, párrafos, cifras, botones), fuera de los videos */
+    var cand = S.querySelectorAll("*");
+    for (var q = 0; q < cand.length; q++) {
+      var e = cand[q];
+      if (e.closest(MEDIA_SEL + ", nav, header, footer, [aria-hidden='true']")) continue;
+      var own = false;
+      for (var n = 0; n < e.childNodes.length; n++) { var nd = e.childNodes[n]; if (nd.nodeType === 3 && nd.textContent.trim()) { own = true; break; } }
+      if (!own && !e.matches("a.btn, img.nxinline")) continue;
+      /* subir hasta un elemento que acepte «translate» (no un texto en línea suelto) */
+      var x = e;
+      while (x !== S && x.parentElement && getComputedStyle(x).display === "inline" && !/flex|grid/.test(getComputedStyle(x.parentElement).display)) x = x.parentElement;
+      if (x === S || x.matches(MEDIA_SEL) || x.querySelector(MEDIA_SEL)) continue;
+      if (!seen.has(x)) { seen.add(x); text.push(x); }
+    }
+    /* quedarse solo con los bloques de más afuera (un párrafo y su <strong> se mueven juntos) */
+    text = text.filter(function (t) { for (var y = t.parentElement; y && y !== S; y = y.parentElement) if (seen.has(y)) return false; return true; });
     if (media.length || text.length) groups.push({ s: S, media: media, text: text });
   }
 
