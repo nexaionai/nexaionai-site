@@ -10,9 +10,10 @@
 .nm .ai{color:var(--acc);text-transform:none}
 
 /* Logo en la navegación */
-.nxlogo{min-height:44px}
+.nxlogo{min-height:44px;display:inline-flex!important;align-items:center;gap:12px}
+.nxsym{display:block;height:34px;width:auto}
 .nxmark{display:block;height:26px;width:auto}
-@media (max-width:760px){.nxmark{height:20px}}
+@media (max-width:760px){.nxmark{height:20px}.nxsym{height:26px}.nxlogo{gap:9px}}
 
 /* Acento */
 .navlink:hover{color:var(--acc)}
