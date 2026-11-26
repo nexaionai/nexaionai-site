@@ -63,8 +63,8 @@
     /* ---- Home: GrossKeep ---- */
     "Track every payment since Day 1. Protect your gross.": "Controla cada pago desde el Día 1. Cuida tu gross.",
     "GrossKeep video": "Video de GrossKeep",
-    "First month free · then $149/month per dealership": "Primer mes gratis · luego $149/mes por dealer",
-    "Start free month · then $149/month": "Empieza el mes gratis · luego $149/mes",
+    "30-day free trial · then $149/month per dealership": "Prueba gratis de 30 días · luego $149/mes por dealer",
+    "Start free trial · then $149/month": "Empieza tu prueba gratis · luego $149/mes",
 
     /* ---- Home: SharKeep ---- */
     "Coming soon": "Muy pronto",
