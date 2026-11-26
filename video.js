@@ -16,3 +16,24 @@
     });
   });
 })();
+
+/* Al hacer scroll, cualquier video que salga de la vista se pausa (orden del fundador, 25-nov-2026).
+   Se pausa cuando queda menos de la mitad del video en pantalla; no vuelve a arrancar solo. */
+(function () {
+  if (!("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      var v = e.target;
+      if (e.intersectionRatio < 0.5 && !v.paused) v.pause();
+    });
+  }, { threshold: [0, 0.5, 1] });
+  function watch(root) {
+    (root.tagName === "VIDEO" ? [root] : root.querySelectorAll ? root.querySelectorAll("video") : []).forEach(function (v) {
+      if (!v.__nxWatched) { v.__nxWatched = true; io.observe(v); }
+    });
+  }
+  watch(document);
+  new MutationObserver(function (ms) {
+    ms.forEach(function (m) { m.addedNodes.forEach(function (n) { if (n.nodeType === 1) watch(n); }); });
+  }).observe(document.body, { childList: true, subtree: true });
+})();

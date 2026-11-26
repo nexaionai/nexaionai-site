@@ -67,7 +67,7 @@ a[href="index.html"].navlink .nm{margin-left:.35em}
 }
 
 /* Parallax del hero (25-nov-2026): solo transform, movido por parallax.js */
-#top .herobg,#top>div:last-child{will-change:transform}
+#top.hasphoto .herobg,#top.hasphoto>div:last-child{will-change:transform}
 @media (prefers-reduced-motion:reduce){#top .herobg,#top>div:last-child{transform:none!important}}
 
 /* Regreso a la principal desde las páginas de producto (25-nov-2026): «← NEXAIONai» visible en desktop y móvil */
@@ -78,3 +78,7 @@ a[href="index.html"].navlink .nm{margin-left:.35em}
 @media (max-width:760px){.nxbackwrap{gap:10px}.nxback{gap:6px;font-size:16px;padding-right:10px}.nxbackmark{height:12px}.nxbackwrap .nxlogo{font-size:15px!important;letter-spacing:.08em!important}.nxbackwrap~.nxlang button{min-width:36px!important}}
 @media (max-width:440px){.nxbackwrap .nxlogo{display:none!important}.nxback{border-right:0;padding-right:0}}
 @media (min-width:761px) and (max-width:1199px){.nxbackwrap{gap:14px}.nxback{padding-right:14px}.nxbackwrap .nxlogo{font-size:20px!important;letter-spacing:.12em!important}.nxnav:has(.nxbackwrap),.nxnav:has(.nxbackwrap)>.nxhide{flex-wrap:wrap!important}}
+
+/* Header siempre por encima del contenido que se mueve con el parallax (Safari/WebKit: los clics deben llegar al header) */
+header{z-index:100!important}
+header .nxnav{position:relative;z-index:101}
