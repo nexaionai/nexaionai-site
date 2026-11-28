@@ -136,7 +136,10 @@
     /* ---- Privacy / Terms ---- */
     "Privacy Policy": "Política de privacidad",
     "Terms of Service": "Términos de servicio",
-    "This page is being finalized and will be posted here soon. Questions in the meantime:": "Esta página se está terminando y se publicará aquí muy pronto. Mientras tanto, preguntas a:"
+    "This page is being finalized and will be posted here soon. Questions in the meantime:": "Esta página se está terminando y se publicará aquí muy pronto. Mientras tanto, preguntas a:",
+    "NEXAIONai LLC Privacy Policy for the website and the GrossKeep platform. Version 3.0, effective November 26, 2026.": "Política de privacidad de NEXAIONai LLC para el sitio web y la plataforma GrossKeep. Versión 3.0, vigente desde el 26 de noviembre de 2026.",
+    "NEXAIONai LLC Terms of Service for the website and the GrossKeep platform. Version 3.0, effective November 26, 2026.": "Términos de servicio de NEXAIONai LLC para el sitio web y la plataforma GrossKeep. Versión 3.0, vigente desde el 26 de noviembre de 2026.",
+    "NEXAIONai LLC · 2645 Executive Park Drive, Suite 200 · Weston, FL 33331 · United States · (754) 330-0001 ·": "NEXAIONai LLC · 2645 Executive Park Drive, Suite 200 · Weston, FL 33331 · Estados Unidos · (754) 330-0001 ·"
   };
 
   var KEY = "nx-lang", ATTRS = ["aria-label", "title", "alt", "placeholder"];
@@ -181,6 +184,8 @@
     });
     /* Videos with text inside: show the poster in the active language */ document.querySelectorAll("video[data-es-poster]").forEach(function (v) { if (!v.getAttribute("data-en-poster")) v.setAttribute("data-en-poster", v.getAttribute("poster")); v.setAttribute("poster", es ? v.getAttribute("data-es-poster") : v.getAttribute("data-en-poster")); }); /* Elements that only make sense in English (e.g. an English-only video) */
     document.querySelectorAll("[data-en-only]").forEach(function (el) { el.style.display = es ? "none" : ""; });
+    /* Elements that only make sense in Spanish (e.g. the ES legal texts) */
+    document.querySelectorAll("[data-es-only]").forEach(function (el) { el.style.display = es ? "block" : "none"; });
 
     /* SharKeep video: show the 17s version in Spanish, the current video in English */ document.querySelectorAll("video[data-es-src]").forEach(function (v) { if (!v.getAttribute("data-en-src")) v.setAttribute("data-en-src", v.getAttribute("src") || "media/sharkeep.mp4"); var src = es ? v.getAttribute("data-es-src") : v.getAttribute("data-en-src"); if (v.getAttribute("src") !== src) { var wasPlaying = !v.paused; v.setAttribute("src", src); v.load(); if (wasPlaying || v.hasAttribute("autoplay")) { var p = v.play(); if (p && p.catch) p.catch(function () {}); } } }); /* GrossKeep video follows the site language */
     var v = document.getElementById("gkvideo");
